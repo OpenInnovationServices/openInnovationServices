@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+
+.info-text{
+  font-family: 'Montserrat', sans-serif;
+  text-align: justify;
+  font-size: 14px;
+}
+
+/* body{
+  background-color:#efe5f9;
+} */
+
+.mainForm{
+  padding-bottom: 20px;
+}
+
+.tech-img{
+  max-height: 4rem;
+  margin: 0.6rem;
+}
+
+.middle {
+  margin: auto;
+}
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  font-size:10px;
+}
+
+option{
+  line-height: 20px;
+}
+
+.caption {
+  display: block;
+}
+
+.spacing{
+  padding-top: 15px;
+}
+
+.subtitle{
+  /* color: #6601c6; */
+  font-family: 'Montserrat', sans-serif;
+  font-size:1rem;
+  font-weight: 500;
+}
+
+.subheading{
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.btn-color{
+  /* background-color: #6601c6; */
+  color: #efe5f9;
+}
+
+/* .formCtn, .ipborder{
+  -moz-box-shadow: 1px 1px 3px 2px #6601c6;
+-webkit-box-shadow: 1px 1px 3px 2px #6601c6;
+box-shadow:         1px 1px 3px 2px #6601c6;
+} */
+
+  .footerbtn {
+    background:none!important;
+    color:inherit;
+    border:none; 
+    padding:0!important;
+    font: inherit;
+    cursor: pointer;
+}
+.logo-img{
+  max-height: 152px;
+  margin-bottom: 40px;
+  margin-top:2.5rem;
+}
+
+.footerImg{
+  max-height:40px;
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 920px) {
+    .logo-img{
+        max-height: 70px;
+        margin-bottom: 25px;
+        margin-top: 2rem;
+      }
+} 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .logo-img{
+  max-height: 50px;
+  margin-bottom: 25px;
+  margin-top: 2rem;
+}
+} 

@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:transparent;">
+        <div class="container" style="color:purple;font-weight: bold;">
+            <h4>Dashboard View</h4>
+            <div class="justify-content-end" style="display:flex; font-size: 15px;">
+            <a href="/innovationChallenge" >Back to Main Page</a>&nbsp;| &nbsp;
+            <form onsubmit="return confirm('Do you really want to submit the form?');"  action="/innovationChallenge/delete" method="POST"   >
+                <button type="submit" class="footerbtn" type="submit">
+                    Delete
+                </button>
+                </form>
+              </div>
+        </div>
+      </nav>
+      <!-- <%= length <2 ? "style=display:none;" : '' %> -->
+
+  <div class="container">
+        <hr style="margin-top:0;">
+    <%if (length < 1) { %>
+        <h2>No Mix and Match solutions to display ..... <a href="/innovationChallenge">Go back to main page</a></h2>
+      <% }else{ %>
+  <table class="table table-bordered" >
+      <thead>
+        <th>Team Name</th>
+        <th>Every Day Object</th>
+        <th>Emerging Technology</th>
+        <th>Solution Provided</th>
+      </thead>
+      <% for(var i=0; i < data.length; i++) { %>
+         <tr>
+            <td><%= data[i].name %></td>
+           <td><%= data[i].everyDayObject %></td>
+           <td><%= data[i].techObject %></td>
+           <td><%= data[i].solution %></td> 
+         </tr>
+      <% } %>
+      </table>
+
+      <% } %> 
+    </div>
+
+
