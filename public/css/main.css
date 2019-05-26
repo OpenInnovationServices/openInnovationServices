@@ -1,5 +1,69 @@
-@import url('https://fonts.googleapis.com/css?family=Istok+Web|Special+Elite&display=swap');
-  .logo-img{
+@import url('https://fonts.googleapis.com/css?family=Lato|Istok+Web|Special+Elite&display=swap');
+.logo-m{
+  width:100px;
+  height:auto;
+  margin-left: 4rem;
+}  
+
+nav{
+  border-bottom: 1px solid;
+  margin-bottom: 4rem;
+}
+
+.nav-item{
+  margin-right:4rem;
+}
+
+.game-box-custom{
+  height: 540px;
+  width: auto;
+}
+
+.hiw-1{
+  color: #ac2430;
+  border: 1px solid #ac2430;
+   
+}
+
+.hiw-2{
+  color: #de5430;
+  border: 1px solid #de5430;
+   
+}
+.hiw-3{
+  color: #debb30;
+  border: 1px solid #debb30;
+   
+}
+.hiw-4{
+  color: #009949;
+  border: 1px solid #009949;
+   
+}
+.hiw-5{
+  color: #286aa6;
+  border: 1px solid #286aa6;
+   
+}
+
+.hiw-6{
+  color: #a6286c;
+  border: 1px solid #a6286c;
+   
+}
+
+.nav-link {
+  font-size: 1.2em !important;
+  margin-right: 2rem;
+  font-family: 'Lato', sans-serif;
+  padding: .2rem 1rem;
+}
+.creative-img{
+  width: 350px;
+  margin: 5rem 0;
+}
+
+.logo-img{
   height: auto;
   width: 250px;
   margin: 25px 0px;
@@ -7,12 +71,11 @@
   .main-title{
     font-size:35px;color:blueviolet;
     margin:2rem 0;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Lato', sans-serif;
   }
 
 
   .game-box{
-    border: 1px solid black;
     padding: 10px;
     min-height: 270px;
     border-radius:25px; 
@@ -27,12 +90,12 @@
   .smbox-text{
     font-size: 1.5rem;
     text-align: center;
-    font-family: 'Istok Web', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 
   .box-text{
     margin: 20px 0px;
-    font-family: 'Istok Web', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
   .challenges-container{
     margin: 2rem 0;
@@ -41,7 +104,7 @@
   .sm-title{
     font-size: 2rem;
     font-weight: 500;
-    font-family: 'Istok Web', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 
   .fade-effect{
@@ -125,16 +188,37 @@
 	}
 }
 
+
+
   /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 920px) {
     .main-title{
     font-size:25px;
   }
 
+  .game-box{
+    margin-bottom: 2rem;
+  }
+
   .logo-img{
   height: auto;
   width: 150px;
   margin: 25px 0px;
+  }
+
+  .logo-m{
+    width:60px;
+    height:auto;
+    margin-left: 2rem;
+  }  
+
+  .creative-img{
+    width: 350px;
+    margin: 2rem 0;
+  }
+  .game-box-custom{
+    height: 440px;
+    width: auto;
   }
 } 
 
@@ -151,5 +235,20 @@
 
   .playbtn{
     bottom: 50px;
+  }
+
+  .logo-m{
+    width:60px;
+    margin-left: 1rem;
+  }  
+
+  .creative-img{
+    width: 150px;
+    margin: 2rem 0;
+  }
+
+  .game-box-custom{
+    height: 340px;
+    width: auto;
   }
 }
