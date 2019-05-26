@@ -8,42 +8,59 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <style>
-  .logo-img{
-  max-height: 82px;
-  }
-  .main-title{
-    font-size:35px;color:blueviolet;margin-bottom:30px;
-  }
-
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 920px) {
-    .logo-img{
-        max-height: 70px;
-      }
-      .main-title{
-    font-size:25px;color:blueviolet;margin-bottom:30px;
-  }
-} 
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .logo-img{
-  max-height: 50px;
-}
-.main-title{
-    font-size:20px;color:blueviolet;margin-bottom:30px;
-  }
-  </style>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css" type="text/css">
+  
 </head>
-<body>
+<body class="fade-effect">
+  <div class="text-center">
+        <h4 class="main-title">INNOVATION & CREATIVITY CHALLENGES</h4>
+        <h5 class="line anim-typewriter">On Demand, Interactive, Revealing</h5>
+      </div>
   <div class="container">
-        <h4 class="main-title">Welcome to Open innovation Challenges</h4>
-        <a href="/crazyCombinations"><img src="/images/logo.png" class="logo-img"></a>
-        <hr>
-        <a href="/innovationChallenge"><img src="/images/innoChallenge-logo.png" class="logo-img"></a>
-        <hr>
-        <h4>Re Imagine (Coming soon...)</h4>
+      <div class="row text-center challenges-container">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="game-box">
+          <img src="/images/logo.png" class="logo-img">
+          <p class="box-text">Combine objects with emerging tech to create something new.</p>
+          <a href="/crazyCombinations" class="btn btn-danger playbtn">Play <i class="fas fa-play"></i></a>
+        </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="game-box">
+          <h4 class="sm-title">Re Imagine (Coming soon...)</h4>
+          <p class="box-text">Repurpose objects in as many ways.</p>
+          <strong>Coming Soon.</strong><br>
+          <!-- <a href="#" class="btn btn-danger playbtn">Play <i class="fas fa-play"></i></a> -->
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="game-box">
+          <img src="/images/innoChallenge-logo.png" class="logo-img">
+          <p class="box-text">Create an innovative idea for your business.</p>
+          <a href="/innovationChallenge" class="btn btn-danger playbtn">Play <i class="fas fa-play"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-lg-5 col-md-5 col-sm-12" style="margin:auto;">
+          <div class="game-box" style="padding-top:5rem;">
+            <p class="smbox-text sm-title">TAKE OUR</p>
+            <p class="smbox-text sm-title">INNOVATION CHECKUP</p>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-12 text-center">
+            <div class="game-box" style="padding-top:3rem;">
+              <p class="smbox-text sm-title">CREATIVE TYPES</p>
+              <p class="smbox-text"><a style="text-decoration:none;" href="https://mycreativetype.com/share/visionary/">DISCOVER YOUR <br>CREATIVE PERSONALITY</a></p>
+            </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
     </div>
 
 </body>
