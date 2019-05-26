@@ -239,7 +239,7 @@ nav{
 
   .logo-m{
     width:60px;
-    margin-left: 1rem;
+    margin-left: 8rem;
   }  
 
   .creative-img{
@@ -250,5 +250,9 @@ nav{
   .game-box-custom{
     height: 340px;
     width: auto;
+  }
+  li.nav-item{
+    font-size:0.8rem;
+    margin-right: 2rem;
   }
 }
