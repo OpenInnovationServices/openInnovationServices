@@ -42,6 +42,7 @@ iframe{
 .game-box-custom{
   height: 540px;
   width: auto;
+  background-color: #fcfaf6;
 }
 
 .hiw-1{
@@ -80,7 +81,7 @@ iframe{
 .creative-img{
   width: auto;
   height:150px;
-  margin: 5rem 0 1.5rem 0;
+  margin: 5rem 0 3.2rem 0;
 }
 
 .logo-img{    
@@ -107,6 +108,14 @@ iframe{
     right: 50px;
   }
 
+  .adobe-btn{
+    position: absolute;
+    bottom: 26px;
+    left: 25px;
+    font-size: 0.5rem;
+    height: 1rem;
+  }
+
   .smbox-text{
     font-size: 1.5rem;
     text-align: center;
@@ -119,6 +128,7 @@ iframe{
 
   h6.display-5{
     font-size: 1.4rem;
+    margin-bottom:3rem;
   }
 
   .box-text{
@@ -127,15 +137,15 @@ iframe{
     padding-left: 1rem;
   }
   .challenges-container{
-    margin: 2rem 0;
+    margin: 2rem 0 4rem 0;
   }
 
   .sm-title{
     font-size: 1rem;
     font-weight: 900;
-    font-family: 'Lato', sans-serif;
+    font-family: sans-serif;
     margin-bottom: 0%;
-    margin-top: 2.5rem;
+    margin-top: 1.1rem;
   }
 
   .sm-infotext{
@@ -143,6 +153,7 @@ iframe{
     font-weight: 500;
     font-family: 'Lato', sans-serif;
     color: black;
+    padding-top:0.6rem;
   }
 
   img.vert-move {
@@ -274,7 +285,13 @@ img.vert-move {
     margin-left: 4rem;
   }  
 
-  
+  .adobe-btn{
+    position: absolute;
+    bottom: 56px;
+    left: 25px;
+    font-size: 0.5rem;
+    height: 1rem;
+  }
 
   .creative-img{
     width: auto;
@@ -336,16 +353,19 @@ img.vert-move {
 
   .creative-img{
     width: auto;
-  height:120px;
+  height:140px;
   margin: 3rem 0;
   }
 
   .game-box-custom{
-    height: 380px;
+    height: 440px;
     width: auto;
   }
   li.nav-item{
     font-size:0.8rem;
     margin-right: 2rem;
   }
+  .challenges-container {
+    margin: 2rem 0 2rem 0;
+}
 }
