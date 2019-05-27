@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Istok+Web|Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Istok+Web|Special+Elite&display=swap');
 .iframe-container {
   position: relative;
   overflow: hidden;
@@ -78,13 +78,14 @@ iframe{
   padding: .2rem 1rem;
 }
 .creative-img{
-  width: 350px;
-  margin: 5rem 0;
+  width: auto;
+  height:150px;
+  margin: 5rem 0 1.5rem 0;
 }
 
 .logo-img{    
-  height: 55px;
-  width: 270px;
+  height: 45px;
+  width: auto;
   margin: 15px 0px;
   }
   .main-title{
@@ -122,7 +123,6 @@ iframe{
 
   .box-text{
     margin: 8px 0px;
-    font-family: 'Lato', sans-serif;
     text-align: left;
     padding-left: 1rem;
   }
@@ -131,10 +131,36 @@ iframe{
   }
 
   .sm-title{
-    font-size: 2rem;
+    font-size: 1rem;
+    font-weight: 900;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0%;
+    margin-top: 2.5rem;
+  }
+
+  .sm-infotext{
+    font-size: 1rem;
     font-weight: 500;
     font-family: 'Lato', sans-serif;
+    color: black;
   }
+
+  img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
 
   .fade-effect{
     /* background-color: #f3f4f1; */
@@ -220,13 +246,15 @@ iframe{
 
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 992px) {
     .main-title{
     font-size:25px;
   }
 
   .game-box{
     margin-bottom: 2rem;
+    min-height: 330px;
+    min-width:200px;
   }
 
   iframe{
@@ -235,8 +263,8 @@ iframe{
   }
 
   .logo-img{
-  height: auto;
-  width: 150px;
+  height: 25px;
+  width: auto;
   margin: 25px 0px;
   }
 
@@ -249,8 +277,9 @@ iframe{
   
 
   .creative-img{
-    width: 350px;
-    margin: 2rem 0;
+    width: auto;
+    height:100px;
+    margin: 3rem 0;
   }
   .game-box-custom{
     height: 440px;
@@ -259,6 +288,12 @@ iframe{
   h6.display-5{
     font-size: 1.4rem;
     padding: 1rem 2rem;
+  }
+
+  .playbtn{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
   }
 } 
 
@@ -293,13 +328,20 @@ iframe{
     margin-left: 3rem;
   }  
 
+  .logo-img{
+    height: 45px;
+    width: auto;
+    margin: 20px 0px;
+    }
+
   .creative-img{
-    width: 150px;
-    margin: 2rem 0;
+    width: auto;
+  height:120px;
+  margin: 3rem 0;
   }
 
   .game-box-custom{
-    height: 340px;
+    height: 380px;
     width: auto;
   }
   li.nav-item{

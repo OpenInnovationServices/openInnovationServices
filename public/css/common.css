@@ -5,3 +5,39 @@
 .text-center{
     text-align: center;
 }
+
+.position{
+    margin-top: 3rem;
+}
+
+.logo-m{
+    width: auto;
+    height: 3rem;
+    margin-left: 4rem;
+  }  
+
+  nav{
+    border-bottom: 1px solid;
+    margin-bottom: 4rem;
+  }
+  
+  .navbar{
+    padding: 0 0 .3rem 0;
+  }
+
+@media only screen and (max-width: 920px) {
+    .logo-m{
+        width: auto;
+        height: 3rem;
+        margin-left: 4rem;
+      }  
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .logo-m{
+        width: auto;
+        height: 2rem;
+        margin-left: 3rem;
+      }  
+}
