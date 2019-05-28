@@ -24,7 +24,7 @@ app.use('/crazyCombinations', crazyCombinationRoutes);
 app.use('/innovationChallenge',innovationChallenge);
 
 app.get('/',(req,res)=>{
-    res.status(200).render('pages/main-index.ejs');
+    res.status(200).render('pages/challenges-index.ejs');
 })
 
 // Handle 404 - Keep this as a last route

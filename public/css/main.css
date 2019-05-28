@@ -40,8 +40,7 @@ iframe{
 }
 
 .game-box-custom{
-  height: 540px;
-  width: auto;
+  margin:1.7rem;
   background-color: #fcfaf6;
 }
 
@@ -81,7 +80,7 @@ iframe{
 .creative-img{
   width: auto;
   height:150px;
-  margin: 5rem 0 3.2rem 0;
+  margin: 5rem 0 1.6rem 0;
 }
 
 .logo-img{    
@@ -99,13 +98,20 @@ iframe{
   .game-box{
     padding: 10px;
     min-height: 270px;
-    border-radius:25px; 
+    /* border-radius:25px;  */
   }
 
   .playbtn{
-    position: absolute;
-    bottom: 20px;
-    right: 50px;
+    width: 10rem;
+  }
+
+  .innerdiv{
+    padding: 0;
+  }
+
+  .topdiv{
+    background-color: #f2f2f2;
+    padding-bottom:6rem;
   }
 
   .adobe-btn{
@@ -131,10 +137,22 @@ iframe{
     margin-bottom:3rem;
   }
 
+  .card{
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: none;
+  }
+
+  .card-row{
+    margin: 1rem;
+    background-color: white;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+  }
+
   .box-text{
     margin: 8px 0px;
     text-align: left;
-    padding-left: 1rem;
   }
   .challenges-container{
     margin: 2rem 0 4rem 0;
@@ -154,6 +172,7 @@ iframe{
     font-family: 'Lato', sans-serif;
     color: black;
     padding-top:0.6rem;
+    padding-bottom: 1.2rem;
   }
 
   img.vert-move {
@@ -307,11 +326,7 @@ img.vert-move {
     padding: 1rem 2rem;
   }
 
-  .playbtn{
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-  }
+  
 } 
 
 /* Extra small devices (phones, 600px and down) */
