@@ -40,8 +40,8 @@ iframe{
 }
 
 .game-box-custom{
-  margin:1.7rem;
   background-color: #fcfaf6;
+  margin: 2rem 0;
 }
 
 .hiw-1{
@@ -285,6 +285,15 @@ img.vert-move {
     margin-bottom: 2rem;
     min-height: 330px;
     min-width:200px;
+    padding: 11px;
+  }
+
+  .game-box-custom{
+    margin: 1.5rem 0;
+  }
+
+  .sm-infotext {
+    padding-bottom: 0%;
   }
 
   iframe{
@@ -307,7 +316,7 @@ img.vert-move {
   .adobe-btn{
     position: absolute;
     bottom: 56px;
-    left: 25px;
+    left: 15px;
     font-size: 0.5rem;
     height: 1rem;
   }
@@ -317,14 +326,23 @@ img.vert-move {
     height:100px;
     margin: 3rem 0;
   }
-  .game-box-custom{
+  /* .game-box-custom{
     height: 440px;
     width: auto;
-  }
+  } */
   h6.display-5{
     font-size: 1.4rem;
     padding: 1rem 2rem;
   }
+
+  .playbtn {
+    width: 7rem;
+    margin: auto;
+display: block;
+}
+
+
+
 
   
 } 
@@ -361,7 +379,7 @@ img.vert-move {
   }  
 
   .logo-img{
-    height: 45px;
+    height: 40px;
     width: auto;
     margin: 20px 0px;
     }
