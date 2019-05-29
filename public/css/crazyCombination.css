@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
 
+.navbar-brand{
+  height: 2rem;
+  width: auto;
+}
+
+
+
+a.nav-link{
+  text-align: right;
+  margin-right: 0;
+}
+
+ul.navbar-nav.ml-auto{
+  margin-right: 2.5rem;
+}
+
+.navbar{
+  padding: 0 0 .3rem 0;
+  border-bottom: 1px solid black;
+}
+
+.navbar-collapse{
+  background-color: #fff;
+}
+
+.navbar-nav li{
+  padding-right: 1.3rem;
+}
+
+a.nav-link:hover{
+  border-bottom: 1px solid black;
+}
+
+.nav-link{
+  font-size: 1.2em !important;
+  margin-right: 2rem;
+  font-family: 'Lato', sans-serif;
+  padding: .2rem 1rem; 
+}
+
 .info-text{
   font-family: 'Montserrat', sans-serif;
   text-align: justify;
@@ -28,6 +68,7 @@ div.item {
   display: inline-block;
   text-align: center;
   font-size:10px;
+  margin: 0 10px;
 }
 
 option{
@@ -90,5 +131,8 @@ box-shadow:         1px 1px 3px 2px #6601c6;
   max-height: 50px;
   margin-bottom: 25px;
   margin-top: 2rem;
+}
+.nav-link{
+  font-size: 0.8em !important;
 }
 } 
