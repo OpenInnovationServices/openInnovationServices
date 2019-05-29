@@ -19,11 +19,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
+app.get('/',(req,res)=>{
+    res.status(200).send("Welcome to Open Innovation Services");
+})
+
 //set up routes
 app.use('/crazyCombinations', crazyCombinationRoutes);
 app.use('/innovationChallenge',innovationChallenge);
 
-app.get('/',(req,res)=>{
+app.get('/challenges',(req,res)=>{
     res.status(200).render('pages/challenges-index.ejs');
 })
 
