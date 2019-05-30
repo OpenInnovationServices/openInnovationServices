@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+.fa-chevron-up{
+ color: #fff;
+  background-color: black; font-size: 3rem;padding:.2rem .8rem; border-radius: 50%;
+  float: right;
+}
+
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+div.col-12.text-center{
+  margin-top: 5rem;
+}
+
+h6.display-5{
+  font-size: 1.4rem;
+}
+
+h1.display-5.text-center{
+  margin: 2rem 0rem 2rem 0rem;
+  padding-top: 3.5rem;
+  padding-bottom: 0.8rem;
+}
+
+div.col-xs-12.col-sm-6.col-md-4.hiw-b{
+  padding: 1.5rem 4.3rem;
+  margin-bottom: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  text-align: left;
+}
+
+.q1{
+border-bottom: 2px solid  #ac2430;
+}
+
+.q2{
+  border-bottom: 2px solid #de5430;
+}
+
+.q3{
+  border-bottom: 2px solid #debb30;
+}
+
+.q4{
+  border-bottom: 2px solid #009949;
+}
+
+.q5{
+  border-bottom: 2px solid #286aa6;
+}
+
+
+
+.mli-1{
+   color: #ac2430;
+}
+
+.mli-2{
+   color: #de5430;
+}
+
+.mli-3{
+  color: #debb30;
+}
+
+.mli-4{
+   color: #009949;
+}
+.mli-5{
+   color: #286aa6;
+}
+
+
+
+a:hover {
+  text-decoration: none;
+  color: #000
+}
+
+a{
+  color: #000;
+}
+
+.l1:hover{
+  text-decoration: none;
+  border-bottom: 1.5px solid #ac2430;
+}
+
+.l2:hover{
+  text-decoration: none;
+  border-bottom: 1.5px solid #de5430;
+}
+
+.l3:hover{
+  text-decoration: none;
+  border-bottom: 1.5px solid #debb30;
+}
+
+.l4:hover{
+  text-decoration: none;
+  border-bottom: 1.5px solid #009949;
+}
+.l5:hover{
+  text-decoration: none;
+  border-bottom: 1.5px solid #286aa6;
+}
+
+
+#up-arrow-img{
+  height: 3rem;
+  width: auto;
+  float: right;
+}
+
+.faq-links{
+  padding-top: 2rem;
+}
+
+
+
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+h6.display-5{
+  font-size: 1.2rem;
+}
+
+h1.display-5.text-center{
+  font-size: 1.5rem;
+}
+
+div.col-xs-12.col-sm-6.col-md-4.hiw-b{
+  padding: 1.5rem 1.3rem;
+  margin-bottom: 2rem;
+}
+
+b.hiw-title{
+  font-size: 1rem;
+}
+
+p{
+  font-size: 1rem;
+}
+  }
+@media (max-width: 768px) {
+  h1.display-5.text-center{
+  margin: 2rem 0rem;
+  font-size: 1.4rem;
+  padding-top: 5rem;
+}
+
+h3.display-5{
+  font-size: 1.3rem;
+}
+
+h6.display-5{
+  font-size: 1rem;
+}
+
+p{
+  font-size: 0.9rem;
+}
+
+}
+@media (max-width: 576px) {
+  h1.display-5.text-center{
+  margin: 0rem 0rem 1rem 0rem;
+  padding-top: 4rem;
+}
+
+}
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+/*--- Fixed Background Image --*/
+figure {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin: 0!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#fixed {
+  background-image: url('img/mac.png');
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+
+
+
+
+
+
+

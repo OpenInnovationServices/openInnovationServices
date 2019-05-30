@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,700');
+html,body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  color: #222;
+}
+
+.navbar-brand{
+  height: 2rem;
+  width: auto;
+}
+
+
+
+a.nav-link{
+  text-align: right;
+  margin-right: 0;
+}
+
+ul.navbar-nav.ml-auto{
+  margin-right: 2.5rem;
+}
+
+.navbar{
+  padding: 0 0 .3rem 0;
+  border-bottom: 1px solid black;
+}
+
+.navbar-collapse{
+  background-color: #fff;
+}
+
+.navbar-nav li{
+  padding-right: 1.3rem;
+}
+
+a.nav-link:hover{
+  border-bottom: 1px solid black;
+}
+
+.nav-link{
+  font-size: 1.2em !important;
+  margin-right: 2rem;
+  font-family: 'Lato', sans-serif;
+  padding: .2rem 1rem; 
+}
+
+img.logo-m{
+      width: auto;
+    height: 3rem;
+    margin-left: 4rem;
+}
+
+.btn-primary{
+  background-color: #df5933;
+  border:1px solid #df5933;
+  border-radius: 0;
+  width: 12rem;
+  height: 3rem;
+}
+
+.btn-contact{
+  float: right;
+}
+
+.btn-primary:hover{
+  background-color: #9c3e23;
+  border:1px solid #9c3e23;
+}
+
+.contact-img{
+  height: 3rem;
+  width: auto;
+  margin-right: 3rem;
+  margin-left: 1.5rem;
+}
+
+.contact-sec{
+  margin: 0rem 2rem 2rem 2rem;
+  justify-content: center;
+}
+
+.contact-info{
+  font-size: 1.3rem;
+}
+
+.contact-section{
+  margin-top: 0rem
+}
+
+.social{
+  height: 4rem;
+  width: auto;
+}
+.social a{
+  font-size: 4.5em;
+  padding: 0rem 2rem 0rem 2rem;
+  position: relative;
+top: -2.5rem;
+}
+
+.acti{
+	border-bottom: .5px solid grey;
+	padding-bottom: 0.35rem;
+}
+
+span.acti:hover{
+  border-bottom: 0px solid #fff;
+}
+
+div.row.cont{
+  margin-top: 4rem;
+}
+
+
+.bg-img1 {
+  /* The image used */
+  background-image: url('../image/CTA_call.png');
+
+  min-height: 600px;
+  min-width: 700px;
+
+  max-height: 100%;
+  max-width: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-img2 {
+  /* The image used */
+  background-image: url("../image/CTA_email.png");
+
+max-height: 100%;
+max-width: 100%;
+  /* Control the height of the image */
+  min-height: 600px;
+  min-width: 700px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.modal-dialog{
+  max-width: 700px;
+}
+
+.infopack-container{
+  float: right;
+  position: absolute;
+  right: 10rem;
+  margin: 20px;
+  max-width: 220px;
+  padding: 16px;
+  top: 350px;
+}
+
+.callcontainer{
+  float: left;
+  position: absolute;
+  max-width: 230px;
+  padding: 10px;
+  top: 150px;
+  margin-left: 60px;
+}
+
+#email_input{
+  margin-bottom: 3rem;
+  width: 22rem;
+  height: 3rem;
+  font-size: 1.5rem;
+}
+
+#emailinfo_btn{
+  width: 22rem;
+  height: 3rem;
+  margin-right: -165px;
+  font-size: 1.5rem;
+}
+
+.form-control{
+  border-radius: 0;
+}
+
+#name, #ph_no{
+  margin-bottom: 20px;
+font-size: 1.5rem;
+width: 24rem;
+}
+
+#ph_no{
+  margin-bottom: 6rem;
+}
+
+#date, #time{
+font-size: 1.5rem;
+width: 15rem;
+}
+
+#phone_btn{
+margin-bottom: 50px;
+font-size: 1.5rem;
+width: 24rem;
+}
+
+.date-time_div{
+  display: flex;
+width: 500px;
+margin-bottom: 50px;
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0rem rgba(0,123,255,.25);
+}
+
+/* Toast code start */
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+/* Toast code end*/
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+.social a{
+  font-size: 4em;
+  padding: 2rem;
+}
+
+.social{
+  height: 5rem;
+  width: auto;
+}
+
+.navbar{
+  padding: .5rem;
+}
+
+.contact-info{
+  font-size: 100%;
+}
+
+.contact-sec{
+  margin: 2rem 2rem 1rem 2rem;
+  text-align: center;
+  display: block;
+}
+a.nav-link{
+  text-align: right;
+  margin-right: 0;
+}
+
+}
+
+@media (max-width: 768px) {
+
+.navbar{
+  padding: .5rem;
+}
+
+
+
+.contact-info{
+  font-size: 100%;
+}
+
+.contact-sec{
+  margin: 2rem 3rem 1rem 0rem;
+  text-align: center;
+  display: block;
+}
+
+
+
+
+img.logo-m{
+      width: auto;
+    height: 3rem;
+    margin-left: 3rem;
+}
+
+.social a{
+  font-size: 2.5em;
+  padding: 1.2rem;
+ }
+
+ .social{
+  height: 3rem;
+  width: auto;
+}
+
+.btn-primary{
+  background-color: #df5933;
+  border:1px solid #df5933;
+  border-radius: 0;
+  width: 8rem;
+  height: 2rem;
+  font-size: 11px;
+}
+
+.contact-img{
+  height: 2.5rem;
+  width: auto;
+  margin-right: 1.1rem;
+  margin-left: .7rem;
+  margin-bottom: 0rem;
+}
+
+}
+
+@media (max-width: 576px) {
+
+.navbar{
+  padding: .5rem;
+}
+
+
+img.logo-m{
+      width: auto;
+    height: 2rem;
+    margin-left: 1.2rem;
+}
+
+.social a{
+  font-size: 2em;
+  padding: .7rem;
+ }
+
+ .social{
+  height: 2rem;
+  width: auto;
+}
+
+.contact-img{
+  height: 2.5rem;
+  width: auto;
+  margin-right: 1.1rem;
+  margin-left: .7rem;
+  margin-bottom: 0rem;
+}
+
+.contact-sec{
+  margin: 0rem 2rem 0rem 2rem;
+  text-align: center;
+  display: block;
+}
+
+
+/*Code for Contact us buttons*/
+.bg-img1 {
+  /* The image used */
+  background-image: url('../image/CTA_call_mob.png');
+
+  min-height: 400px;
+  min-width: 300px;
+
+  max-height: 100%;
+  max-width: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-img2 {
+  /* The image used */
+  background-image: url("../image/CTA_email_mob.png");
+
+max-height: 100%;
+max-width: 100%;
+  /* Control the height of the image */
+  min-height: 400px;
+  min-width: 300px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.modal-dialog{
+  max-width: 300px;
+}
+
+
+.infopack-container{
+  float: right;
+  position: absolute;
+  right: 3rem;
+  margin: 20px;
+  max-width: 220px;
+  padding: 16px;
+  top: 120px;
+}
+
+.callcontainer{
+  float: left;
+  position: absolute;
+  margin-left : 10px;
+  max-width: 230px;
+  padding: 0px;
+  top: 90px;
+}
+
+#email_input{
+  margin-bottom: 7rem;
+  width: 15rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+#emailinfo_btn{
+  width: 15rem;
+  height: 2.5rem;
+  margin-right: -2rem;
+  font-size: 1rem;
+}
+
+.form-control{
+  border-radius: 0;
+}
+
+#name, #ph_no{
+  margin-bottom: 10px;
+font-size: 0.8rem;
+width: 15rem;
+}
+
+#ph_no{
+  margin-bottom: 4rem;
+}
+
+#date{
+font-size: 0.8rem;
+line-height: 1.8rem;
+width: 15rem;
+margin-bottom: 10px;
+}
+
+#time{
+font-size: 0.8rem;
+line-height: 1.8rem;
+width: 15rem;
+margin-bottom: 15px;
+}
+
+#phone_btn{
+font-size: 1rem;
+width: 15rem;
+}
+
+.date-time_div{
+  display: grid;
+margin-bottom: 0;
+}
+
+
+
+
+
+
+
+}
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+/*--- Fixed Background Image --*/
+figure {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin: 0!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#fixed {
+  background-image: url('img/mac.png');
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/

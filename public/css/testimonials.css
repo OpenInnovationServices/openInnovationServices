@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:700');
+html,body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  color: #222;
+  background-color: #f2f2f2;
+}
+
+div.col-12.text-center{
+	margin-top: 5rem;
+}
+
+h6.display-5{
+  font-size: 1.4rem;
+}
+
+img#testimonial-img.img-fluid{
+	padding: 0rem 2rem;
+  position: relative;
+    text-align: center;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 16%;
+    right: 13%;
+    color: black;
+}
+
+.tcard-title{
+  letter-spacing: 3px;
+  font-size: 23px;
+}
+
+.tcard-subt{
+  font-size: 1rem;
+letter-spacing: 2px;
+line-height: 1rem;
+}
+
+.tcard-text{
+  letter-spacing: 1px;
+  line-height: 1.2rem;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+p{
+  margin-bottom: 0;
+  line-height: 10px;
+}
+
+
+div.row.cont{
+  margin-top: 4rem;
+}
+
+#card2{
+  margin-top: 0;
+}
+
+/*---Media Queries --*/
+@media (max-width: 1024px) {
+img#testimonial-img.img-fluid{
+  padding: 0rem 2rem;
+  position: relative;
+    text-align: center;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 55px;
+    right: 85px;
+    color: black;
+}
+
+.tcard-title{
+  letter-spacing: 1.5px;
+  font-size: 1.2rem;
+}
+
+.tcard-subt{
+  font-size: 0.8rem;
+letter-spacing: 1px;
+}
+
+.tcard-text{
+  letter-spacing: 0.5px;
+  line-height: 1rem;
+  font-size: 0.9rem;
+  margin-top: 10px;
+
+}
+  }
+
+@media (max-width: 992px) {
+img#testimonial-img.img-fluid{
+  padding: 0rem 2rem;
+  position: relative;
+    text-align: center;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 55px;
+    right: 85px;
+    color: black;
+}
+
+.tcard-title{
+  letter-spacing: 1.5px;
+  font-size: 1.2rem;
+}
+
+.tcard-subt{
+  font-size: 0.8rem;
+letter-spacing: 1px;
+}
+
+.tcard-text{
+  letter-spacing: 0.5px;
+  line-height: 1rem;
+  font-size: 0.9rem;
+
+}
+  }
+@media (max-width: 768px) {
+
+img#testimonial-img.img-fluid{
+  padding: 0rem 2rem;
+  position: relative;
+    text-align: center;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 16.5%;
+    right: 11%;
+    color: black;
+}
+
+.tcard-title{
+  letter-spacing: 1.5px;
+  font-size: 4vh;
+  margin-bottom: 0;
+}
+
+.tcard-subt{
+  font-size: 2.2vh;
+letter-spacing: 1px;
+}
+
+.tcard-text{
+  letter-spacing: 0.5px;
+  line-height: 2.5vh;
+  font-size: 2.4vh;
+
+}
+
+img#testimonial-img.img-fluid{
+	padding:2rem;
+}
+
+#t-img{
+	padding: 0rem;
+}
+
+}
+@media (max-width: 576px) {
+
+  img#testimonial-img.img-fluid{
+  padding: 0rem 2rem;
+  position: relative;
+    text-align: center;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: black;
+}
+
+.tcard-title{
+  letter-spacing: .8px;
+  font-size: 0.9rem;
+  margin-bottom: -5px;
+}
+
+.tcard-subt{
+  font-size: 0.6rem;
+letter-spacing: 1px;
+}
+
+.tcard-text{
+  letter-spacing: 0.4px;
+  line-height: .90rem;
+  font-size: .65rem;
+}
+  
+ img#testimonial-img.img-fluid{
+	padding:0rem;
+}
+}
