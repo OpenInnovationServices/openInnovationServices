@@ -104,6 +104,31 @@ left: 38%;
 top: 3%;
 }
 
+.serviceImg{
+  max-width: 100%;
+margin-top: 1rem;
+margin-bottom: 2rem;
+}
+
+.color-1{
+  color: #ac2430;
+}
+.color-2{
+  color: #de5430;
+}
+.color-3{
+  color: #debb30;
+}
+.color-4{
+  color: #009949;
+}
+.color-5{
+  color: #286aa6;
+}
+.color-6{
+  color: #a6286c;
+}
+
 .hiw-1{
    color: #ac2430;
    border-bottom: 3px solid #ac2430;
@@ -141,14 +166,47 @@ top: 3%;
   padding-bottom: -2rem;
 }
 
+.hicw-title{
+  padding-bottom: 3rem!important;
+}
+
+.wicw-title{
+  padding: 3rem auto;
+}
+
+.service-container{
+  padding-top: 5rem;
+}
+
 div.col-12.wiw-box-1,div.col-12.wiw-box-2,
 div.col-12.wiw-box-3,div.col-12.wiw-box-4,
 div.col-12.wiw-box-5,div.col-12.wiw-box-6{
       padding: 3rem 2.5rem 2rem 2.5rem;
 }
 
+div.col-12.wicw-box-1,div.col-12.wicw-box-2,
+div.col-12.wicw-box-3{
+  padding: .6rem 1rem 3rem 1rem;
+}
+
+.wicw-box-1{
+  border: 2px solid #ac2430;
+}
+
+.wicw-box-2{
+  border: 2px solid #de5430;
+}
+
+.wicw-box-3{
+  border: 2px solid #debb30;
+}
+
 div.wiw-b{
   padding: 5rem 4rem .1rem 4rem;
+}
+
+div.wiw-s{
+  padding: 2rem 4rem .1rem 4rem;
 }
 
 
@@ -263,6 +321,12 @@ margin-bottom: 4rem;
 font-size: 0.9rem;
 }
 
+div.wiw-s {
+  padding: 0rem 0.3rem;
+margin-bottom: 4rem;
+font-size: 0.9rem;
+}
+
 
 .welcome1 {
     width: 75%;
@@ -349,6 +413,10 @@ div.col-12.wiw-box-5,div.col-12.wiw-box-6{
 
 div.wiw-b {
     padding: 1.8rem 3rem;
+}
+
+div.wiw-s {
+  padding: 1.8rem 4rem;
 }
 
 div.hiw-b {
