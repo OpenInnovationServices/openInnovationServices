@@ -105,7 +105,7 @@ top: 3%;
 }
 
 .serviceImg{
-  max-width: 100%;
+  max-width: 50%;
 margin-top: 1rem;
 margin-bottom: 2rem;
 }
@@ -206,7 +206,7 @@ div.wiw-b{
 }
 
 div.wiw-s{
-  padding: 2rem 4rem .1rem 4rem;
+  padding: 2rem 1rem .1rem 1rem;
 }
 
 
