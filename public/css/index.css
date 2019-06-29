@@ -6,6 +6,11 @@ html,body{
   color: #222;
 }
 
+a:hover{
+  text-decoration: none;
+  color:inherit;
+}
+
 .arrow-container {
   width: 45px;
   height: 45px;
@@ -171,7 +176,8 @@ margin-bottom: 2rem;
 }
 
 .hicw-title{
-  padding-bottom: 3rem!important;
+  padding-top: 3rem!important;
+  padding-bottom: 2rem!important;
 }
 
 .wicw-title{

@@ -71,20 +71,20 @@
 				<div class="row text-center padding">
 					<div class="col-xs-4 col-sm-4 col-md-4 wiw-s">
 						<h5 class="hiw-title-s">Customized, Real-World</h5>
-						<h2 class="display-3-s color-2">Innovation<br><span class="hiw-2">Sprints</span></h2>
+						<a href="#innoSprints"><h2 class="display-3-s color-2">Innovation<br><span class="hiw-2">Sprints</span></h2></a>
 
 						<img class="serviceImg" id="wiw-service" src="image/services/designThinking.png" />
 					</div>
 
 					<div class="col-xs-4 col-sm-4 col-md-4 wiw-s">
 						<h5 class="hiw-title-s">Bespoke, Specialised</h5>
-						<h2 class="display-3-s color-4">Innovation<br><span class="hiw-4">Celebrations</span></h2>
+						<a href="#innoCelebrations"><h2 class="display-3-s color-4">Innovation<br><span class="hiw-4">Celebrations</span></h2></a>
 						<img class="serviceImg" id="wiw-service" src="image/services/creativityPopus.png" />
 					</div>
 
 					<div class="col-xs-4 col-sm-4 col-md-4 wiw-s">
 						<h5 class="hiw-title-s">Generating Insights</h5>
-						<h2 class="display-3-s color-5">Innovation<br><span class="hiw-5">Interventions</span></h2>
+						<a href="#innoIntervations"><h2 class="display-3-s color-5">Innovation<br><span class="hiw-5">Interventions</span></h2></a>
 						<img class="serviceImg" id="wiw-service" src="image/services/generatingInsights.png" />
 					</div>
 
@@ -133,7 +133,7 @@
 
 
 	<!--How Innovation Sprint Works Section-->
-	<div class="container padding hiw-container">
+	<div class="container padding hiw-container" id="innoSprints">
 		<div class="row welcome text-center">
 			<div class="hiw-title col-12">
 				<h3 class="display-5">How <span class="color-2">Innovation Sprint</span> Works</h3>
@@ -254,7 +254,7 @@
 	</div>
 
 	<!--How Innovation Celebration Works Section-->
-	<div class="container padding hiw-container">
+	<div class="container padding hiw-container" id="innoCelebrations">
 		<div class="row text-center">
 			<div class="hicw-title col-12">
 				<h3 class="display-5">How <span class="color-4">Innovation Celebration</span> Works</h3>
@@ -315,7 +315,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<!--Why Innovation Celebration Works section-->
 	<div class="container wiw-container">
@@ -469,6 +468,34 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	$(document).ready(function(){
+	  // Add scrollspy to <body>
+	  //$('body').scrollspy({target: ".navbar", offset: 50});   
+	
+	  // Add smooth scrolling on all links inside the navbar
+	  $("a").on('click', function(event) {
+		// Make sure this.hash has a value before overriding default behavior
+		if (this.hash !== "") {
+		  // Prevent default anchor click behavior
+		  event.preventDefault();
+	
+		  // Store hash
+		  var hash = this.hash;
+	
+		  // Using jQuery's animate() method to add smooth page scroll
+		  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+		  $('html, body').animate({
+			scrollTop: $(hash).offset().top
+		  }, 1000, function(){
+	   
+			// Add hash (#) to URL when done scrolling (default click behavior)
+			window.location.hash = hash;
+		  });
+		}  // End if
+	  });
+	});
+	</script>
 <script type="text/javascript">
 	$(function () {
 		setTimeout('topArrow()');
