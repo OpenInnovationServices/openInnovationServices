@@ -418,11 +418,11 @@ div.col-12.wiw-box-5,div.col-12.wiw-box-6{
 }
 
 .display-3-s{
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .hiw-title-s{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 }
@@ -500,18 +500,13 @@ h2.display-5{
 }
 
 .serviceImg{
-  max-width: 25%;
 margin-top: .5rem;
 margin-bottom: 1rem;
 }
 
-.display-3-s{
-  font-size: 1rem;
-}
 
-.hiw-title-s{
-  font-size: .8rem;
-}
+
+
 
 div.wiw-s {
   padding: 1rem 1.5rem;
