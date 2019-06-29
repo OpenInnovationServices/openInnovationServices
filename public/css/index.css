@@ -63,6 +63,10 @@ p.wiwb{
   font-size: 1rem;
 }
 
+.hiw-title-s{
+  font-size: 1.5rem;
+}
+
 .hiw-container{
   margin-top: 0rem;
 }
@@ -206,7 +210,7 @@ div.wiw-b{
 }
 
 div.wiw-s{
-  padding: 2rem 1rem .1rem 1rem;
+  padding: .5rem 1rem .1rem .5rem;
 }
 
 
@@ -270,12 +274,24 @@ div.hiw-b{
   margin-bottom: 1.5rem;
 }
 
+.display-3-s{
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
 p.header{
   margin-bottom: -1.5rem;
 }
 
 #contactus{
   margin-top: -2rem;
+}
+
+/* Quiz Section */
+.game-box{
+  padding: 10px;
+  min-height: 270px;
+  /* border-radius:25px;  */
 }
 
 /*---Media Queries --*/
@@ -338,6 +354,12 @@ font-size: 0.9rem;
 }
 @media (max-width: 768px) {
 
+  .serviceImg {
+    max-width: 70%;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
 div.hiw-b {
     padding: 1rem 1rem;
     font-size: 0.8rem;
@@ -389,7 +411,13 @@ div.col-12.wiw-box-5,div.col-12.wiw-box-6{
       font-size: 0.9rem;
 }
 
+.display-3-s{
+  font-size: 1.4rem;
+}
 
+.hiw-title-s{
+  font-size: 1.2rem;
+}
 
 }
 @media (max-width: 576px) {
@@ -415,9 +443,7 @@ div.wiw-b {
     padding: 1.8rem 3rem;
 }
 
-div.wiw-s {
-  padding: 1.8rem 4rem;
-}
+
 
 div.hiw-b {
     padding: 1rem 4rem;
@@ -467,10 +493,28 @@ h2.display-5{
   font-size: 1.8rem;
 }
 
+.serviceImg{
+  max-width: 25%;
+margin-top: .5rem;
+margin-bottom: 1rem;
+}
+
+.display-3-s{
+  font-size: 1rem;
+}
+
+.hiw-title-s{
+  font-size: .8rem;
+}
+
+div.wiw-s {
+  padding: 1rem 1.5rem;
+  margin-bottom: 0rem;
+}
+
 
 
 }
-
 
 
 /*---Firefox Bug Fix --*/
