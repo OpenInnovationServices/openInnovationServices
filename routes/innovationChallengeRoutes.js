@@ -2,7 +2,7 @@ const router = require('express').Router();
 const keys = require('../config/keys');
 const MongoClient = require('mongodb').MongoClient;
 const innovationChallenge = require('../models/innovationChallengeModel');
-
+var mongodb = require('mongodb');
 
 
 router.get('/',(req,res)=>{
@@ -66,5 +66,19 @@ router.post('/delete', (req,res)=>{
         });
     });
 });
+
+router.post('/delete/id', (req,res)=>{
+    MongoClient.connect(keys.mongodb.dbURI,{useNewUrlParser:true},function(err, db) {
+         if (err) throw err;
+         var dbo = db.db("jl-oauth-test");
+         var myquery = { _id: new mongodb.ObjectID(req.body.id) };
+         dbo.collection("innovationChallengeSolutions").deleteOne(myquery, function(err, obj) {
+             if (err) throw err;
+             console.log("1 document deleted");
+             res.status(200).redirect('/innovationChallenge/view');
+             db.close();
+           });
+     });
+ });
 
 module.exports = router;

@@ -69,7 +69,7 @@ p.wiwb{
 }
 
 .hiw-title-s{
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .hiw-container{
@@ -215,9 +215,16 @@ div.wiw-b{
 }
 
 div.wiw-s{
-  padding: .5rem 1rem .1rem .5rem;
+  padding: 2rem auto;
 }
 
+.wicw-padding{
+  padding: 0.01rem 1rem 2rem 1rem !important;
+}
+
+.wicw-outer{
+  padding: 1rem 4rem 1rem 4rem !important;
+}
 
 div.hiw-b{
   padding: 0.9rem 4rem;
@@ -282,7 +289,7 @@ div.hiw-b{
 .display-3-s{
   margin-bottom: 1.5rem;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 p.header{
@@ -291,6 +298,10 @@ p.header{
 
 #contactus{
   margin-top: -2rem;
+}
+
+.contact-title,.contact-padding{
+  padding: 2rem auto;
 }
 
 /* Quiz Section */
@@ -337,15 +348,14 @@ div.hiw-b{
   top: -20%;
 }
 
-div.wiw-b {
+div.wiw-b,div.wicw-outer {
    padding: 0rem 0.3rem;
-margin-bottom: 4rem;
+margin-bottom: 3rem;
 font-size: 0.9rem;
 }
 
 div.wiw-s {
   padding: 0rem 0.3rem;
-margin-bottom: 4rem;
 font-size: 0.9rem;
 }
 
@@ -357,13 +367,22 @@ font-size: 0.9rem;
     padding-bottom: 3rem;
 }
 
+.hiw-title-s {
+  font-size: 1.3rem;
 }
+
+.display-3-s {
+  font-size: 1.3rem;
+}
+
+}
+
+
 @media (max-width: 768px) {
 
   .serviceImg {
     max-width: 70%;
-    margin-top: 0rem;
-    margin-bottom: 0rem;
+    margin: 1rem auto;
 }
 
 div.hiw-b {
@@ -383,8 +402,8 @@ div.hiw-b {
  font-size: 200%; 
 }
 
-div.wiw-b {
-    padding: .9rem .9rem;
+div.wiw-b, div.wicw-outer {
+    padding: .9rem .9rem !important;
     margin-bottom: 2rem;
 }
 
@@ -418,11 +437,11 @@ div.col-12.wiw-box-5,div.col-12.wiw-box-6{
 }
 
 .display-3-s{
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 
 .hiw-title-s{
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 }
