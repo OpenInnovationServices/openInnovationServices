@@ -114,8 +114,11 @@ top: 3%;
 }
 
 .serviceImg{
-  max-width: 50%;
-margin:1rem 2rem;
+  max-width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .color-1{
@@ -323,12 +326,20 @@ div.hiw-b {
     padding: 0.9rem 2.6rem;
 
 }
+
+.wicw-outer {
+  padding: .5rem !important;
+}
 }
 
 
 @media (max-width: 992px) {
 div.hiw-b{
   padding: 0.9rem 1rem;
+}
+
+.wicw-outer {
+  padding: .5rem !important;
 }
 
 .bgimg-1{
@@ -521,17 +532,14 @@ h2.display-5{
 .serviceImg{
 margin-top: .5rem;
 margin-bottom: 1rem;
+max-width: 40%;
 }
-
-
-
-
 
 div.wiw-s {
   padding: 1rem 1.5rem;
   margin-bottom: 0rem;
+  max-width: 40%;
 }
-
 
 
 }
