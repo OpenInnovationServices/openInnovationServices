@@ -14,7 +14,7 @@ a:hover{
 .arrow-container {
   width: 45px;
   height: 45px;
-  margin: 60px auto;
+  margin: 50px auto;
 }
 
 p.wiwb{
@@ -35,7 +35,7 @@ p.wiwb{
 .caption {
   position: absolute;
   left: 0;
-  top: 58%;
+  top: 65%;
   width: 100%;
   text-align: center;
   color: #000;
