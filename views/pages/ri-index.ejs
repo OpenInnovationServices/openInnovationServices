@@ -1,95 +1,119 @@
 <% include ../partials/header %>
 
 <section id="one">
-    <div class="container">
-        <input type="text" class="form-control" name="username" />
-        <button id=btn>START</button>
-    </div>
+  <div class="container">
+    <input type="text" class="form-control" name="userName" id="userName" />
+    <button id=btn>START</button>
+  </div>
 </section>
 
 <section id="two" class="container" style="display:none">
-    <img src="/image/telephone-1.png">
-    <textarea name="comment" class="form-control" placeholder="Enter Imaginations here"></textarea>
-    <div>Registration closes in <span id="time1"></span> minutes!</div>
+  <img src="/image/telephone-1.png" alt="phone" id="objImg">
+  <p>Hello <b id="welcomeText"></b></p>
+  <textarea id="imaginations" name="comment" class="form-control" placeholder="Enter Imaginations here" ></textarea>
+  <div>Registration closes in <span id="time1"></span> minutes!</div>
 </section>
 
 <script>
-    $('#btn').on('click', function () {
-        $('#two').show('slow');
-        var display1 = document.querySelector('#time1'),
-            timer = new CountDownTimer(10);
+  $('#btn').on('click', function () {
+    var userName = document.getElementById('userName').value;
+    console.log(userName);
+    document.getElementById("welcomeText").innerHTML = name;
+    var imgName = document.getElementById("objImg").getAttribute("alt");
+    var imagineData = document.getElementById('imaginations').value;
+    console.log(imagineData);
+    $('#two').show('slow');
+    var display1 = document.querySelector('#time1'),
+      timer = new CountDownTimer(5);
 
-        timer.onTick(format1).start();
+    timer.onTick(format1).start();
 
-        function format1(minutes, seconds) {
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-            display1.textContent = minutes + ':' + seconds;
-            if(minutes == 00 && seconds == 00){
-                wait(3000);
-                window.location.href = "http://localhost:3000/challenges";
+    function format1(minutes, seconds) {
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      display1.textContent = minutes + ':' + seconds;
+      if (minutes == 00 && seconds == 00) {
+        wait(3000);
+        console.log(userName);
+        console.log(imgName);
+        console.log(imagineData);
+        $.ajax
+          ({
+            type: "POST",
+            url: "reImagine/submit",
+            data: {
+              name: userName,
+              imgObj: imgName,
+              imaginations: imagineData
             }
-        }
-    });
+          }).done(function (data) {
+            alert(data);
+            window.location.href = "http://localhost:3000/challenges";
+          })
 
-    function CountDownTimer(duration, granularity) {
-  this.duration = duration;
-  this.granularity = granularity || 1000;
-  this.tickFtns = [];
-  this.running = false;
-}
+      }
+    }
+  });
 
-function wait(ms){
-   var start = new Date().getTime();
-   var end = start;
-   while(end < start + ms) {
-     end = new Date().getTime();
+  function CountDownTimer(duration, granularity) {
+    this.duration = duration;
+    this.granularity = granularity || 1000;
+    this.tickFtns = [];
+    this.running = false;
   }
-}
 
-CountDownTimer.prototype.start = function() {
-  if (this.running) {
-    return;
+  function wait(ms) {
+    var start = new Date().getTime();
+    var end = start;
+    while (end < start + ms) {
+      end = new Date().getTime();
+    }
   }
-  this.running = true;
-  var start = Date.now(),
+
+  CountDownTimer.prototype.start = function () {
+    if (this.running) {
+      return;
+    }
+    this.running = true;
+    var start = Date.now(),
       that = this,
       diff, obj;
 
-  (function timer() {
-    diff = that.duration - (((Date.now() - start) / 1000) | 0);
-    
-    if (diff > 0) {
-      setTimeout(timer, that.granularity);
-    } else {
-      diff = 0;
-      that.running = false;
-    }
+    (function timer() {
+      diff = that.duration - (((Date.now() - start) / 1000) | 0);
 
-    obj = CountDownTimer.parse(diff);
-    that.tickFtns.forEach(function(ftn) {
-      ftn.call(this, obj.minutes, obj.seconds);
-    }, that);
-  }());
-};
+      if (diff > 0) {
+        setTimeout(timer, that.granularity);
+      } else {
+        diff = 0;
+        that.running = false;
+      }
 
-CountDownTimer.prototype.onTick = function(ftn) {
-  if (typeof ftn === 'function') {
-    this.tickFtns.push(ftn);
-  }
-  return this;
-};
-
-CountDownTimer.prototype.expired = function() {
-  return !this.running;
-};
-
-CountDownTimer.parse = function(seconds) {
-  return {
-    'minutes': (seconds / 60) | 0,
-    'seconds': (seconds % 60) | 0
+      obj = CountDownTimer.parse(diff);
+      that.tickFtns.forEach(function (ftn) {
+        ftn.call(this, obj.minutes, obj.seconds);
+      }, that);
+    }());
   };
-};
+
+  CountDownTimer.prototype.onTick = function (ftn) {
+    if (typeof ftn === 'function') {
+      this.tickFtns.push(ftn);
+    }
+    return this;
+  };
+
+  CountDownTimer.prototype.expired = function () {
+    return !this.running;
+  };
+
+  CountDownTimer.parse = function (seconds) {
+    return {
+      'minutes': (seconds / 60) | 0,
+      'seconds': (seconds % 60) | 0
+    };
+  };
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -31,11 +31,11 @@ img#testimonial-img.img-fluid{
 
 .tcard-title{
   letter-spacing: 3px;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .tcard-subt{
-  font-size: 1rem;
+  font-size: 0.8rem;
 letter-spacing: 2px;
 line-height: 1rem;
 }
