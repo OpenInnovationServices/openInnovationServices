@@ -1,0 +1,24 @@
+<% include ../partials/ic-header %>
+<div class="container">
+    <%if (length < 1) { %>
+    <h2>No pictures to show at the moment</h2>
+    <% }else{ %>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <% for(var i=0; i < data.length; i++) { %>
+                <img src="<%= data[i].picture.data %>" class="rounded" alt="Cinque Terre" width="304" height="236">
+                <% } %>
+        </div>
+    </div>
+    <% } %>
+</div>
+
+<% include ../partials/footer %>
+
+<!-- <script>
+$(document).ready(function() {
+    $.ajax({
+      type: "GET",
+      url:'gallery/img/'+
+}
+</script> -->

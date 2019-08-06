@@ -1,0 +1,68 @@
+<% include ../partials/ic-header %>
+
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:transparent;">
+        <div class="container" style="color:purple;font-weight: bold;">
+          <h4>Dashboard View</h4>
+          <div class="justify-content-end" style="display:flex; font-size: 15px;">
+            <a href="/gallery">Go to Gallery</a>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Add new image
+                  </button>
+                  
+            </div>
+        </div>
+      </nav>
+
+      <div class="container">
+            <hr style="margin-top:0;">
+            <%if (length < 1) { %>
+            <h2><a href="/gallery">Add new pictures</a></h2>
+            <% }else{ %>
+            <table class="table table-bordered">
+              <thead>
+               <th>Picture</th>
+                <th>Text</th>
+                <th>Delete</th>
+              </thead>
+              <% for(var i=0; i < data.length; i++) { %>
+              <tr>
+                <td><%= data[i].picture %></td>
+                <td><%= data[i].imgText %></td>
+                <td>
+                  <form method="POST" action="/gallery/delete/id">
+                    <input type="hidden" value="<%= data[i]._id %>" name="id">
+                    <button type="submit"><i class="fas fa-trash"></i></button>
+                  </form>
+                </td>
+              </tr>
+              <% } %>
+            </table>
+          
+            <% } %>
+          </div>
+
+<!-- The New image Modal -->
+<div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+                    <form method="POST" enctype="multipart/form-data" action="/gallery/postPicture">
+                        <input type="text" name="imgText">
+                        <input type="file" name="newImage" accept="image/*" />
+                        <button type="submit">Upload Image</button>
+                      </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<% include ../partials/footer %>

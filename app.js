@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const crazyCombinationRoutes=require('./routes/crazyCombinationRoutes');
 const innovationChallenge=require('./routes/innovationChallengeRoutes');
 const reImagine = require('./routes/reImagineRoutes');
+const gallery = require('./routes/galleryRoutes');
 
 //Setting Port
 var port = process.env.PORT || 3000;
@@ -28,6 +29,7 @@ app.get('/',(req,res)=>{
 app.use('/crazyCombinations', crazyCombinationRoutes);
 app.use('/innovationChallenge', innovationChallenge);
 app.use('/reImagine', reImagine);
+app.use('/gallery', gallery);
 
 app.get('/challenges',(req,res)=>{
     res.status(200).render('pages/challenges-index.ejs');
