@@ -14,14 +14,14 @@ router.get('/',(req,res)=>{
         dbo.collection("gallerySolutions").find({}).toArray(function(err, result) {
           if (err) res.status(400).json("Error Connecting DB");
           res.status(200).render('pages/gallery.ejs',{data:result,length:result.length});
-          console.log(result);
+          //console.log(result[0]._id);
           db.close();
         });
     }); 
     
 });
 
-router.get('/galleryDashboard',(req,res)=>{
+router.get('/dashboard',(req,res)=>{
     MongoClient.connect(keys.mongodb.dbURI,{useNewUrlParser:true}, function(err, db) {
         if (err) throw err;
         var dbo = db.db("jl-oauth-test");
@@ -51,7 +51,7 @@ router.post('/postPicture',upload.single('newImage'),(req,res)=>{
         var dbo = db.db("jl-oauth-test");
         dbo.collection("gallerySolutions").insertOne(newPicture,function(err, result) {
           if (err) res.status(400).json("Error Connecting DB");
-          res.status(201).redirect('/gallery');
+          res.status(201).redirect('/gallery/dashboard');
           db.close();
         });
     });
@@ -69,10 +69,24 @@ router.get('/img/:imgId',(req,res)=>{
             console.log("1 img found");
             db.close();
             res.contentType('image/jpg');
-            console.log(result.picture.data.buffer);
+            //console.log(result.picture.data.buffer);
             res.send(result.picture.data.buffer);
           });
     });
 })
+
+router.post('/delete/id', (req,res)=>{
+    MongoClient.connect(keys.mongodb.dbURI,{useNewUrlParser:true},function(err, db) {
+         if (err) throw err;
+         var dbo = db.db("jl-oauth-test");
+         var myquery = { _id: new mongodb.ObjectID(req.body.id) };
+         dbo.collection("gallerySolutions").deleteOne(myquery, function(err, obj) {
+             if (err) throw err;
+             //console.log("1 document deleted");
+             res.status(200).redirect('/gallery/dashboard');
+             db.close();
+           });
+     });
+ });
 
 module.exports = router;

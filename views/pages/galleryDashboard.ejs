@@ -1,11 +1,10 @@
 <% include ../partials/ic-header %>
 
-<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:transparent;">
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:transparent;margin-bottom: 2em;">
         <div class="container" style="color:purple;font-weight: bold;">
           <h4>Dashboard View</h4>
-          <div class="justify-content-end" style="display:flex; font-size: 15px;">
-            <a href="/gallery">Go to Gallery</a>
-           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          <div class="justify-content-end" style="display:flex; font-size: 15px;padding-top: 5px;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                     Add new image
                   </button>
                   
@@ -14,7 +13,6 @@
       </nav>
 
       <div class="container">
-            <hr style="margin-top:0;">
             <%if (length < 1) { %>
             <h2><a href="/gallery">Add new pictures</a></h2>
             <% }else{ %>
@@ -26,12 +24,12 @@
               </thead>
               <% for(var i=0; i < data.length; i++) { %>
               <tr>
-                <td><%= data[i].picture %></td>
+                <td><img src="/gallery/img/<%= data[i]._id %>" class="rounded" alt="<%= data[i].imgText %>" class="img-thumbnail" width="102" height="66"></td>
                 <td><%= data[i].imgText %></td>
                 <td>
                   <form method="POST" action="/gallery/delete/id">
                     <input type="hidden" value="<%= data[i]._id %>" name="id">
-                    <button type="submit"><i class="fas fa-trash"></i></button>
+                    <button type="submit">Delete</button>
                   </form>
                 </td>
               </tr>
@@ -55,9 +53,15 @@
             <!-- Modal body -->
             <div class="modal-body">
                     <form method="POST" enctype="multipart/form-data" action="/gallery/postPicture">
-                        <input type="text" name="imgText">
+                      <div class="form-group">
+                          <label for="ImageText">Image Text:</label>
+                        <input type="text" name="imgText" maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Select Image:</label>
                         <input type="file" name="newImage" accept="image/*" />
-                        <button type="submit">Upload Image</button>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Upload Image</button>
                       </form>
             </div>
           </div>
