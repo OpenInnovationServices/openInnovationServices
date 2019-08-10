@@ -6,7 +6,8 @@ const gallerySchema = new Schema({
         data: Buffer,
         contentType: String
     },
-    imgText: String
+    imgText: String,
+    position:String
 });
 
 const gallery = mongoose.model('gallerySolution', gallerySchema, 'gallerySolutions');

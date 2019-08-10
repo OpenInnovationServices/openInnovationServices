@@ -1,72 +1,151 @@
 <% include ../partials/ic-header %>
+<style>
+  ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 1px;
+  padding: 5px 10px;
+}
+
+.sortable-ghost {
+  opacity: .6;
+}
+</style>
 
 <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:transparent;margin-bottom: 2em;">
-        <div class="container" style="color:purple;font-weight: bold;">
-          <h4>Dashboard View</h4>
-          <div class="justify-content-end" style="display:flex; font-size: 15px;padding-top: 5px;">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    Add new image
-                  </button>
-                  
-            </div>
-        </div>
-      </nav>
+  <div class="container" style="color:purple;font-weight: bold;">
+    <h4>Dashboard View</h4>
+    <div class="justify-content-end" style="display:flex; font-size: 15px;padding-top: 5px;">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Add new image
+      </button>
 
-      <div class="container">
-            <%if (length < 1) { %>
-            <h2><a href="/gallery">Add new pictures</a></h2>
-            <% }else{ %>
-            <table class="table table-bordered">
-              <thead>
-               <th>Picture</th>
-                <th>Text</th>
-                <th>Delete</th>
-              </thead>
-              <% for(var i=0; i < data.length; i++) { %>
-              <tr>
-                <td><img src="/gallery/img/<%= data[i]._id %>" class="rounded" alt="<%= data[i].imgText %>" class="img-thumbnail" width="102" height="66"></td>
-                <td><%= data[i].imgText %></td>
-                <td>
-                  <form method="POST" action="/gallery/delete/id">
-                    <input type="hidden" value="<%= data[i]._id %>" name="id">
-                    <button type="submit">Delete</button>
-                  </form>
-                </td>
-              </tr>
-              <% } %>
-            </table>
+    </div>
+  </div>
+</nav>
+
+<!-- <div class="container">
+  <%if (length < 1) { %>
+  <h2><a href="/gallery">Add new pictures</a></h2>
+  <% }else{ %>
+  <table class="table table-bordered">
+    <thead>
+      <th>Picture</th>
+      <th>Text</th>
+      <th>Delete</th>
+    </thead>
+    <tbody id="boo">
+    <% for(var i=0; i < data.length; i++) { %>
+    <tr>
+      <td><img src="/gallery/img/<%= data[i]._id %>" class="rounded" alt="<%= data[i].imgText %>" class="img-thumbnail"
+          width="102" height="66"></td>
+      <td><%= data[i].imgText %></td>
+      <td>
+        <form method="POST" action="/gallery/delete/id">
+          <input type="hidden" value="<%= data[i]._id %>" name="id">
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+    <% } %>
+    </tbody>
+  </table>
+
+  <% } %>
+</div> -->
+
+<div class="container">
+<%if (length < 1) { %>
+  <h2><a href="/gallery">Add new pictures</a></h2>
+  <% }else{ %>
+    <ul id="foo">
+    <% for(var i=0; i < data.length; i++) { %>
+      
+    <li id="<%= data[i]._id %>" style="border: 1px solid black;">
+      <div style="display: inline-flex;">
+        <p style="margin: 1rem;"><%= data[i].position %></p>
+          <form method="POST" action="/gallery/delete/id">
+            <input type="hidden" value="<%= data[i]._id %>" name="id">
+            <button type="submit" class="btn btn-danger" style="margin: 1rem 1rem;">Delete</button>
+          </form>
+      <img src="/gallery/img/<%= data[i]._id %>" class="rounded" alt="<%= data[i].imgText %>" class="img-thumbnail"
+            width="102" height="66" style="margin: 0 1rem;">
+       <p><b>Text:</b> <%= data[i].imgText %> </p>
           
-            <% } %>
-          </div>
+    </div>
+    </li>
+  
+  <% } %>
+</ul>
+<% } %>
+<br>
+<button class="btn btn-primary" onclick="getList()">Save Order</button>
+</div>
 
 <!-- The New image Modal -->
 <div class="modal" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-      
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Modal Heading</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-      
-            <!-- Modal body -->
-            <div class="modal-body">
-                    <form method="POST" enctype="multipart/form-data" action="/gallery/postPicture">
-                      <div class="form-group">
-                          <label for="ImageText">Image Text:</label>
-                        <input type="text" name="imgText" maxlength="100">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Select Image:</label>
-                        <input type="file" name="newImage" accept="image/*" />
-                        </div>
-                        <button class="btn btn-primary" type="submit">Upload Image</button>
-                      </form>
-            </div>
-          </div>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form method="POST" enctype="multipart/form-data" action="/gallery/postPicture">
+          <div class="form-group">
+            <label for="ImageText">Image Text:</label>
+            <input type="text" name="imgText" maxlength="100">
+          </div>
+          <div class="form-group">
+            <label for="email">Select Image:</label>
+            <input type="file" name="newImage" accept="image/*" />
+          </div>
+          <button class="btn btn-primary" type="submit">Upload Image</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sortable.js -->
+<script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+<script>
+  Sortable.create(foo, {
+    group: 'boo',
+    animation: 200
+  });
+</script>
+<script>
+function getList(){
+  var lis = document.getElementById("foo").getElementsByTagName("li");
+  console.log(lis);
+  console.log(typeof(lis));
+  for(var i =0; i<lis.length;i++){
+    updateRecord(lis[i].id,i+1)
+  }
+  window.location.replace("http://localhost:3000/gallery/dashboard");
+} 
+
+function updateRecord(id, pos){
+  $.ajax({
+    type: 'PUT',
+    url: '/gallery/update/'+id,
+    data: {position: pos}
+  }).done(function(response){
+      console.log('updated')
+    }).fail(function(response){
+      console.log('not working');
+    });
+  
+}
+
+</script>
 
 <% include ../partials/footer %>
