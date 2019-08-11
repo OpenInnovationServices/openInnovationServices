@@ -65,8 +65,9 @@ p.wiwb{
 }
 
 .cb-image{
-  max-height: 100px;
-  max-width: 100px;
+  max-height: 50px;
+  max-width: 50px;
+  margin-bottom: 15px;
 }
 
 .hiw-title{
@@ -235,7 +236,7 @@ div.wiw-s{
 }
 
 div.hiw-b{
-  padding: 0.9rem 4rem;
+  padding: 0.9rem 3.5rem;
 }
 
 .wiw-title{
