@@ -49,7 +49,6 @@ router.post('/submit',(req,res)=>{
           db.close();
         });
     });
-    //res.status(201).redirect('/challenges');
 })
 
 // router.post('/delete', (req,res)=>{
