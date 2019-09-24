@@ -1,30 +1,65 @@
 <% include ../partials/header %>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"><a href="index.html"><img class="logo-m"
+      src="/image/challenges/open-logo.jpg" /></a>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item" style="padding-right: 1.3rem;font-family: 'Lato', sans-serif;color: #222;"><a class="nav-link"
+        href="/challenges">Return to challenges</a></li>
+  </ul>
+</nav>
 
-<section id="one">
+<section id="one" style="margin-top: 4rem;">
   <div class="container">
-    <input type="text" class="form-control" name="userName" id="userName" />
-    <button id=btn>START</button>
+    <div class="text-center">
+      Welcome to Re-Imagine App
+    </div>
+    <div class="form-group">
+      <label for="username">Enter you name/team Name:</label>
+      <input type="text" class="form-control" name="userName" id="userName" />
+    </div>
+    <button class="btn btn-danger btn-lg" id="btn">START</button>
   </div>
 </section>
 
 <section id="two" class="container" style="display:none">
-  <img src="/image/telephone-1.png" alt="phone" id="objImg">
-  <p>Hello <b id="welcomeText"></b></p>
-  <textarea id="imaginations" name="comment" class="form-control" placeholder="Enter Imaginations here" ></textarea>
-  <div>Registration closes in <span id="time1"></span> minutes!</div>
+    <p class="text-center">Hello <b id="welcomeText"></b>, Be Creative !</p>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <img src="/image/telephone-1.png" alt="phone" id="objImg">
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div><b>Time Remaining:</b> <span id="time1"></span> minutes!</div>
+      <textarea id="imaginations" name="comment" class="form-control" rows="7"
+        placeholder="Enter Imaginations here"></textarea>
+    </div>
+  </div>
+
+  
+
+
 </section>
+
+<style>
+  #objImg {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  #one{
+    margin-bottom: 1rem;
+  }
+</style>
 
 <script>
   $('#btn').on('click', function () {
     var userName = document.getElementById('userName').value;
     console.log(userName);
-    document.getElementById("welcomeText").innerHTML = name;
+    document.getElementById("welcomeText").innerHTML = userName;
     var imgName = document.getElementById("objImg").getAttribute("alt");
-    var imagineData = document.getElementById('imaginations').value;
-    console.log(imagineData);
+    
     $('#two').show('slow');
+    $('#one').show('hide');
     var display1 = document.querySelector('#time1'),
-      timer = new CountDownTimer(5);
+      timer = new CountDownTimer(300);
 
     timer.onTick(format1).start();
 
@@ -37,11 +72,12 @@
         wait(3000);
         console.log(userName);
         console.log(imgName);
-        console.log(imagineData);
+        var imagineData = document.getElementById('imaginations').value;
+    console.log("Imagined Data here"+imagineData);
         $.ajax
           ({
             type: "POST",
-            url: "reImagine/submit",
+            url: "/reImagine/submit",
             data: {
               name: userName,
               imgObj: imgName,
@@ -118,4 +154,3 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<% include ../partials/footer %>
