@@ -14,9 +14,9 @@
     </div>
     <div class="form-group">
       <label for="username">Enter you name/team Name:</label>
-      <input type="text" class="form-control" name="userName" id="userName" />
+      <input type="text" class="form-control" name="userName" id="userName" required />
     </div>
-    <button class="btn btn-danger btn-lg" id="btn">START</button>
+    <button class="btn btn-danger btn-lg" id="startBtn">START</button>
   </div>
 </section>
 
@@ -30,6 +30,9 @@
       <div><b>Time Remaining:</b> <span id="time1"></span> minutes!</div>
       <textarea id="imaginations" name="comment" class="form-control" rows="7"
         placeholder="Enter Imaginations here"></textarea>
+    </div>
+    <div class="col-12 text-center">
+        <button type="submit" class="btn btn-success btn-lg" id="riSubmit">Submit</button>
     </div>
   </div>
 
@@ -50,8 +53,41 @@
 </style>
 
 <script>
-  $('#btn').on('click', function () {
+  $(document).ready(function(){
+    $('#startBtn').attr('disabled',true);
+    $('#userName').keyup(function(){
+        if($(this).val().length !=0)
+            $('#startBtn').attr('disabled', false);            
+        else
+            $('#startBtn').attr('disabled',true);
+    })
+});
+
+$("#riSubmit").click(function(e) {
+  var userName = document.getElementById('userName').value;
+  var imagineData = document.getElementById('imaginations').value;
+  var imgName = document.getElementById("objImg").getAttribute("alt");
+    e.preventDefault();
+    $.ajax
+          ({
+            type: "POST",
+            url: "/reImagine/submit",
+            data: {
+              name: userName,
+              imgObj: imgName,
+              imaginations: imagineData
+            }
+          }).done(function (data) {
+            alert(data);
+            window.location.href = "http://localhost:3000/challenges";
+          })
+    });
+</script>
+
+<script>
+  $('#startBtn').on('click', function () {
     var userName = document.getElementById('userName').value;
+    
     console.log(userName);
     document.getElementById("welcomeText").innerHTML = userName;
     var imgName = document.getElementById("objImg").getAttribute("alt");

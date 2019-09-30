@@ -113,6 +113,13 @@ router.post('/selectImage',(req,res)=>{
     MongoClient.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("jl-oauth-test");
+        var myquery = { };
+        var newValue = { $set: { display: "0" } };
+        dbo.collection("riImageSolutions").updateMany(myquery, newValue, function (err, res) {
+            if (err) throw err;
+            console.log(res.result.nModified+"Updated");
+        });
+
         var myquery = { _id: new mongodb.ObjectID(req.body.reImagneObjects) };
         var newValue = { $set: { display: "1" } };
         dbo.collection("riImageSolutions").updateOne(myquery, newValue, function (err, obj) {
