@@ -3,7 +3,7 @@
   <div class="container" style="color:purple;font-weight: bold;">
     <h4>Dashboard View</h4>
     <div class="justify-content-end" style="display:flex; font-size: 15px;">
-        <a href="/dashboard" style="padding-right: 15px;">Back to Dashboard</a>
+      <a href="/dashboard" style="padding-right: 15px;">Back to Dashboard</a>
       <!-- &nbsp;| &nbsp;
       <form onsubmit="return confirm('Do you really want to submit the form?');" action="/innovationChallenge/delete"
         method="POST">
@@ -12,28 +12,29 @@
         </button>
       </form> -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-          Add new image
-        </button>
+        Add new image
+      </button>
     </div>
   </div>
 </nav>
 <!-- <%= length <2 ? "style=display:none;" : '' %> -->
 
 <div class="container">
-    <form method="POST" action="/reImagine/selectImage">
+  <!-- <form method="POST" action="/reImagine/selectImage">
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Select Image:</label>
-        <select class="form-control" id="reImagneObjects" name="reImagneObjects">
-        </select>
-      </div>
-      <input type="submit" class="btn btn-danger" value="Select Image" name="selectImage" id="selectImage">
-    </form>
-  <hr style="margin-top:1em;">
+      <label for="exampleFormControlSelect1">Select Image:</label>
+      <select class="form-control" id="reImagneObjects" name="reImagneObjects">
+      </select>
+    </div>
+    <input type="submit" class="btn btn-danger" value="Select Image" name="selectImage" id="selectImage">
+  </form>
+  <hr style="margin-top:1em;"> -->
   <%if (length < 1) { %>
   <h2>No Mix and Match solutions to display ..... <a href="/challenges">Go back to Challenges</a></h2>
   <% }else{ %>
   <table class="table table-bordered">
     <thead>
+      <th>Index</th>
       <th>Team Name</th>
       <th>Object</th>
       <th>Imaginations</th>
@@ -41,6 +42,7 @@
     </thead>
     <% for(var i=0; i < data.length; i++) { %>
     <tr>
+      <td><%= i+1 %></td>
       <td><%= data[i].teamName %></td>
       <td><%= data[i].imgObj %></td>
       <td><%= data[i].imaginations %></td>
@@ -60,49 +62,49 @@
 
 <!-- The New image Modal -->
 <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-          <form method="POST" enctype="multipart/form-data" action="/reImagine/postPicture">
-            <div class="form-group">
-              <label for="ImageText">Image Text:</label>
-              <input type="text" name="imgText" maxlength="100">
-            </div>
-            <div class="form-group">
-              <label for="email">Select Image:</label>
-              <input type="file" name="newImage" accept="image/*" />
-            </div>
-            <button class="btn btn-primary" type="submit">Upload Image</button>
-          </form>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form method="POST" enctype="multipart/form-data" action="/reImagine/postPicture">
+          <div class="form-group">
+            <label for="ImageText">Image Text:</label>
+            <input type="text" name="imgText" maxlength="100">
+          </div>
+          <div class="form-group">
+            <label for="email">Select Image:</label>
+            <input type="file" name="newImage" accept="image/*" />
+          </div>
+          <button class="btn btn-primary" type="submit">Upload Image</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
 
 
-  <script>
-      $(document).ready(function() {
-        $.ajax({
-    type: 'GET',
-    url: '/reImagine/getAllImages'
-  }).done(function(data){
+<script>
+  $(document).ready(function () {
+    $.ajax({
+      type: 'GET',
+      url: '/reImagine/getAllImages'
+    }).done(function (data) {
       console.log(data)
-      var s = '<option value="-1">Please Select a Image</option>';  
-               for (var i = 0; i < data.length; i++) {  
-                   s += '<option value="' + data[i]._id + '">' + data[i].imgText + '</option>';  
-               }  
-               $("#reImagneObjects").html(s);  
-    }).fail(function(response){
+      var s = '<option value="-1">Please Select a Image</option>';
+      for (var i = 0; i < data.length; i++) {
+        s += '<option value="' + data[i]._id + '">' + data[i].imgText + '</option>';
+      }
+      $("#reImagneObjects").html(s);
+    }).fail(function (response) {
       console.log('not working');
     });
-  
-      })
-     </script>
+
+  })
+</script>

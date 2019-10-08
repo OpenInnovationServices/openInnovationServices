@@ -23,6 +23,7 @@
   <% }else{ %>
   <table class="table table-bordered">
     <thead>
+      <th>Index</th>
       <th>Team Name</th>
       <th>Every Day Object</th>
       <th>Emerging Technology</th>
@@ -31,6 +32,7 @@
     </thead>
     <% for(var i=0; i < data.length; i++) { %>
     <tr>
+      <td><%= i+1 %></td>
       <td><%= data[i].name %></td>
       <td><%= data[i].everyDayObject %></td>
       <td><%= data[i].techObject %></td>
