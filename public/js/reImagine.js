@@ -48,7 +48,7 @@ $(document).ready(function () { $("#addButton").click(function () {
 $('#startBtn').on('click', function (e) {
     var section1 = document.getElementById('one');
     $('#two').show('slow');
-    var display1 = document.querySelector('#time1'), timer = new CountDownTimer(10);
+    var display1 = document.querySelector('#time1'), timer = new CountDownTimer(300);
 
     timer.onTick(timeFormat).start();
 
@@ -88,7 +88,7 @@ function saveData(e) {
             $('#confirmationModal').modal({ backdrop: 'static', keyboard: false })
             $('#confirmationModal').modal('show');
             setTimeout(function () {
-                window.location.href = "http://localhost:3000/challenges";
+                window.location.href = "http://www.openinnovationservices.com/challenges";
             }, 5000);
 
         })
