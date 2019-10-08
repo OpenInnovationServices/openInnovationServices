@@ -123,4 +123,19 @@
 
 </body>
 
+<script>
+jQuery(document).ready(function($) {
+
+if (window.history && window.history.pushState) {
+
+  window.history.pushState('forward', null, './#forward');
+
+  $(window).on('popstate', function() {
+    alert('Sorry, you cannot go backward.');
+  });
+
+}
+});
+</script>
+
 </html>

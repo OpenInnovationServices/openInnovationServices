@@ -7,186 +7,104 @@
   </ul>
 </nav>
 
-<section id="one" style="margin-top: 4rem;">
+<!-- <section id="one" style="margin-top: 4rem;">
   <div class="container">
     <div class="text-center">
       Welcome to Re-Imagine App
     </div>
-    <div class="form-group">
-      <label for="username">Enter you name/team Name:</label>
-      <input type="text" class="form-control" name="userName" id="userName" required />
-    </div>
     <button class="btn btn-danger btn-lg" id="startBtn">START</button>
   </div>
-</section>
+</section> -->
 
 <section id="two" class="container" style="display:none">
-    <p class="text-center">Hello <b id="welcomeText"></b>, Be Creative !</p>
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="col-lg-4 col-md-4 col-sm-12 text-center">
+      <!-- <h5 style="text-align: left">Object:</h5> -->
       <img src="/reImagine/getImg" alt="phone" id="objImg">
+      <div id="timer">Timer:<b><span id="time1"></span></b> </div>
+      <button type="submit" class="btn btn-success btn-lg" id="riSubmit">Submit</button>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <div><b>Time Remaining:</b> <span id="time1"></span> minutes!</div>
-      <textarea id="imaginations" name="comment" class="form-control" rows="7"
-        placeholder="Enter Imaginations here"></textarea>
+    <div class="col-lg-8 col-md-8 col-sm-12">
+      <input type='button' class="btn btn-success" value='Add Imagination' id='addButton' />
+      <input type='button' class="btn btn-danger" value='Remove Last Imagination' id='removeButton' />
+      <div class="form-horizontal">
+        <div class="control-group" style="margin-top:0.5rem;">
+          <div class="controls">
+            <input type="text" class="form-control myinputs" id="imagination" />
+          </div>
+        </div>
+      </div>
+      <!-- <textarea id="imaginations" name="comment" class="form-control" rows="7"
+          placeholder="Enter Imaginations here"></textarea> -->
     </div>
-    <div class="col-12 text-center">
-        <button type="submit" class="btn btn-success btn-lg" id="riSubmit">Submit</button>
+  </div>
+</section>
+
+<!-- The Modal -->
+<div class="modal" id="submissionModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Submit your answers</h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="username">Enter you name/team Name:</label>
+          <input type="text" class="form-control" name="userName" id="userName" required />
+        </div>
+        <a class="btn btn-success btn-lg" id="finalSubmit">Submit</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- The Modal -->
+<div class="modal" id="instructionModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Instructions before ReImagine Activity:</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Modal body..
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" id="startBtn">Start</button>
+        <a class="btn btn-danger" href="/challenges">Go Back</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="confirmationModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+       <!-- Modal body -->
+        <div class="modal-body" id="confirmationModalBody">
+          Your Data has been saved. Navigating you to challenges page.....
+        </div>
+  
+      </div>
     </div>
   </div>
 
-  
-
-
-</section>
-
-<style>
-  #objImg {
-    max-width: 300px;
-    max-height: 300px;
-  }
-
-  #one{
-    margin-bottom: 1rem;
-  }
-</style>
-
-<script>
-  $(document).ready(function(){
-    $('#startBtn').attr('disabled',true);
-    $('#userName').keyup(function(){
-        if($(this).val().length !=0)
-            $('#startBtn').attr('disabled', false);            
-        else
-            $('#startBtn').attr('disabled',true);
-    })
-});
-
-$("#riSubmit").click(function(e) {
-  var userName = document.getElementById('userName').value;
-  var imagineData = document.getElementById('imaginations').value;
-  var imgName = document.getElementById("objImg").getAttribute("alt");
-    e.preventDefault();
-    $.ajax
-          ({
-            type: "POST",
-            url: "/reImagine/submit",
-            data: {
-              name: userName,
-              imgObj: imgName,
-              imaginations: imagineData
-            }
-          }).done(function (data) {
-            alert(data);
-            window.location.href = "http://localhost:3000/challenges";
-          })
-    });
-</script>
-
-<script>
-  $('#startBtn').on('click', function () {
-    var userName = document.getElementById('userName').value;
-    
-    console.log(userName);
-    document.getElementById("welcomeText").innerHTML = userName;
-    var imgName = document.getElementById("objImg").getAttribute("alt");
-    
-    $('#two').show('slow');
-    $('#one').show('hide');
-    var display1 = document.querySelector('#time1'),
-      timer = new CountDownTimer(300);
-
-    timer.onTick(format1).start();
-
-    function format1(minutes, seconds) {
-
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-      display1.textContent = minutes + ':' + seconds;
-      if (minutes == 00 && seconds == 00) {
-        wait(3000);
-        console.log(userName);
-        console.log(imgName);
-        var imagineData = document.getElementById('imaginations').value;
-    console.log("Imagined Data here"+imagineData);
-        $.ajax
-          ({
-            type: "POST",
-            url: "/reImagine/submit",
-            data: {
-              name: userName,
-              imgObj: imgName,
-              imaginations: imagineData
-            }
-          }).done(function (data) {
-            alert(data);
-            window.location.href = "http://localhost:3000/challenges";
-          })
-
-      }
-    }
-  });
-
-  function CountDownTimer(duration, granularity) {
-    this.duration = duration;
-    this.granularity = granularity || 1000;
-    this.tickFtns = [];
-    this.running = false;
-  }
-
-  function wait(ms) {
-    var start = new Date().getTime();
-    var end = start;
-    while (end < start + ms) {
-      end = new Date().getTime();
-    }
-  }
-
-  CountDownTimer.prototype.start = function () {
-    if (this.running) {
-      return;
-    }
-    this.running = true;
-    var start = Date.now(),
-      that = this,
-      diff, obj;
-
-    (function timer() {
-      diff = that.duration - (((Date.now() - start) / 1000) | 0);
-
-      if (diff > 0) {
-        setTimeout(timer, that.granularity);
-      } else {
-        diff = 0;
-        that.running = false;
-      }
-
-      obj = CountDownTimer.parse(diff);
-      that.tickFtns.forEach(function (ftn) {
-        ftn.call(this, obj.minutes, obj.seconds);
-      }, that);
-    }());
-  };
-
-  CountDownTimer.prototype.onTick = function (ftn) {
-    if (typeof ftn === 'function') {
-      this.tickFtns.push(ftn);
-    }
-    return this;
-  };
-
-  CountDownTimer.prototype.expired = function () {
-    return !this.running;
-  };
-
-  CountDownTimer.parse = function (seconds) {
-    return {
-      'minutes': (seconds / 60) | 0,
-      'seconds': (seconds % 60) | 0
-    };
-  };
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<link rel="stylesheet" href="/css/reImagine.css" type="text/css">
+<script src="/js/timerClock.js"></script>
+<script src="/js/reImagine.js"></script>
