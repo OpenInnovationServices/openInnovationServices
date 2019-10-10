@@ -1,23 +1,24 @@
-$(window).on('load', function () {
-    $('#instructionModal').modal({ backdrop: 'static', keyboard: false })
-    $('#instructionModal').modal('show');
-});
+// $(window).on('load', function () {
+//     $('#instructionModal').modal({ backdrop: 'static', keyboard: false })
+//     $('#instructionModal').modal('show');
+// });
 
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 
     if (window.history && window.history.pushState) {
-  
-      window.history.pushState('forward', null, './#forward');
-  
-      $(window).on('popstate', function() {
-        alert('You cannot go backward. Your data will not be saved');
-      });
-  
-    }
-  });
 
-$(document).ready(function () { $("#addButton").click(function () {
+        window.history.pushState('forward', null, './#forward');
+
+        $(window).on('popstate', function () {
+            alert('You cannot go backward. Your data will not be saved');
+        });
+
+    }
+});
+
+$(document).ready(function () {
+    $("#addButton").click(function () {
         if (($('.form-horizontal .control-group').length + 1) > 10) {
             alert("Only 2 control-group allowed");
             return false;
@@ -35,23 +36,17 @@ $(document).ready(function () { $("#addButton").click(function () {
         $(".form-horizontal .control-group:last").remove();
     });
 
-    $('#finalSubmit').attr('disabled', true);
-    $('#userName').keyup(function () {
-        if ($(this).val().length != 0)
-            $('#finalSubmit').attr('disabled', false);
-        else
-            $('#finalSubmit').attr('disabled', true);
-    })
+    
 });
 
 
 $('#startBtn').on('click', function (e) {
+    $('#startBtn').attr('disabled', true);
     var section1 = document.getElementById('one');
     $('#two').show('slow');
-    var display1 = document.querySelector('#time1'), timer = new CountDownTimer(300);
+    var display1 = document.querySelector('#time1'), timer = new CountDownTimer(180);
 
     timer.onTick(timeFormat).start();
-
     function timeFormat(minutes, seconds) {
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -63,15 +58,20 @@ $('#startBtn').on('click', function (e) {
         }
     }
 });
+
+
+
 // https://stackoverflow.com/questions/48717767/combine-array-from-html-to-jquery
 function saveData(e) {
     var userName = document.getElementById('userName').value;
     var otp = [];
 
     $(".myinputs").each(function () {
-        otp.push($(this).val());
+        if ($(this).val()) {
+            otp.push($(this).val());
+        }
     });
-    // console.log(otp.join(","));
+    var ilength = otp.length;
     var imagineData = otp.join(",");
     var imgName = document.getElementById("objImg").getAttribute("alt");
     e.preventDefault();
@@ -82,6 +82,7 @@ function saveData(e) {
             data: {
                 name: userName,
                 imgObj: imgName,
+                ilength: ilength,
                 imaginations: imagineData
             }
         }).done(function (data) {
@@ -95,11 +96,20 @@ function saveData(e) {
 }
 
 $("#riSubmit").click(function (e) {
+    $('#timer').css("display","none");
     $('#submissionModal').modal({ backdrop: 'static', keyboard: false })
     $('#submissionModal').modal('show');
+    $('#finalSubmit').attr('disabled', true);
+    $('#userName').keyup(function () {
+        if ($(this).val().length != 0)
+            $('#finalSubmit').attr('disabled', false);
+        else
+            $('#finalSubmit').attr('disabled', true);
+    })
 });
 
 $("#finalSubmit").click(function (e) {
+    $('#submissionModal').modal('hide');
     saveData(e);
 });
 

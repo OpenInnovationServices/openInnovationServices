@@ -6,8 +6,7 @@ const reImagineImageSchema = new Schema({
         data: Buffer,
         contentType: String
     },
-    imgText: String,
-    display:String
+    imgText: String
 });
 
 const riImage = mongoose.model('riImageSolution', reImagineImageSchema, 'riImageSolutions');

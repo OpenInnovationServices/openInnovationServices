@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const reImagineSchema = new Schema({
     teamName:String,
     imgObj:String,
+    ilength:String,
     imaginations:String
 });
 

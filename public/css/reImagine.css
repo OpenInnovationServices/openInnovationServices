@@ -1,6 +1,6 @@
 #objImg {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 #one {
@@ -8,7 +8,7 @@
 }
 
 #two {
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 #timer{
@@ -18,4 +18,12 @@
 
 #confirmationModalBody{
     background-color: #5cb85c;
+}
+
+.myinputs{
+    margin-bottom: .5rem;
+}
+
+#riSubmit{
+    margin-top:1rem;
 }

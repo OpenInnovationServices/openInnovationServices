@@ -11,17 +11,7 @@ var upload = multer({ dest: 'uploads/' })
 
 
 router.get('/',(req,res)=>{
-    res.status(200).render('pages/ri-index.ejs');
-    // MongoClient.connect(keys.mongodb.dbURI,{useNewUrlParser:true}, function(err, db) {
-    //     if (err) throw err;
-    //     var dbo = db.db("jl-oauth-test");
-    //     dbo.collection("innovationChallengeSolutions").find({}).toArray(function(err, result) {
-    //       if (err) res.status(400).json("Error Connecting DB");
-    //       res.status(200).render('pages/ic-index.ejs',{length:result.length});
-    //       db.close();
-    //     });
-    // }); 
-	
+    res.status(200).render('pages/ri-index.ejs');	
 });
 
 router.get('/view',(req,res)=>{
@@ -30,7 +20,7 @@ router.get('/view',(req,res)=>{
         var dbo = db.db("jl-oauth-test");
         dbo.collection("reImagineSolutions").find({}).toArray(function(err, result) {
           if (err) res.status(400).json("Error Connecting DB");
-          console.log(result);
+        //   console.log(result);
           res.status(200).render('pages/ri-view.ejs',{data:result,length:result.length});
           db.close();
         });
@@ -39,10 +29,11 @@ router.get('/view',(req,res)=>{
 });
 
 router.post('/submit',(req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     const reImagined = new reImagine({
         teamName:req.body.name,
         imgObj:req.body.imgObj,
+        ilength:req.body.ilength,
         imaginations: req.body.imaginations
     });
     MongoClient.connect(keys.mongodb.dbURI,{useNewUrlParser:true}, function(err, db) {
@@ -66,8 +57,7 @@ router.post('/postPicture', upload.single('newImage'), (req, res) => {
 
     const newPicture = new riImage({
         picture: finalImg,
-        imgText: req.body.imgText,
-        display: "0"
+        imgText: req.body.imgText
     });
 
 
@@ -90,7 +80,7 @@ router.post('/delete/id', (req,res)=>{
         var myquery = { _id: new mongodb.ObjectID(req.body.id) };
         dbo.collection("reImagineSolutions").deleteOne(myquery, function(err, obj) {
             if (err) throw err;
-            console.log("1 document deleted");
+            // console.log("1 document deleted");
             res.status(200).redirect('/reImagine/view');
             db.close();
           });
@@ -117,7 +107,7 @@ router.post('/selectImage',(req,res)=>{
         var newValue = { $set: { display: "0" } };
         dbo.collection("riImageSolutions").updateMany(myquery, newValue, function (err, res) {
             if (err) throw err;
-            console.log(res.result.nModified+"Updated");
+            // console.log(res.result.nModified+"Updated");
         });
 
         var myquery = { _id: new mongodb.ObjectID(req.body.reImagneObjects) };
@@ -131,16 +121,18 @@ router.post('/selectImage',(req,res)=>{
     });
 })
 
-router.get('/getImg', (req, res) => {
+
+router.get('/getImg/:imgName', (req, res) => {
+    
     MongoClient.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("jl-oauth-test");
-        var myquery = { display :'1' };
+        var myquery = { imgText :req.params.imgName };
         dbo.collection("riImageSolutions").findOne(myquery, function (err, result) {
             if (err) throw err;
             db.close();
             res.contentType('image/jpg');
-            console.log(result.picture.data.buffer);
+            // console.log(result.picture.data.buffer);
             res.send(result.picture.data.buffer);
         });
     });

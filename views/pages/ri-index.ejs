@@ -7,35 +7,67 @@
   </ul>
 </nav>
 
-<!-- <section id="one" style="margin-top: 4rem;">
+<section id="one" style="margin-top: 4rem;">
   <div class="container">
-    <div class="text-center">
-      Welcome to Re-Imagine App
+    <div>
+      <p style="text-align:left;" class="subheading">Instructions</p>
+      <p style="font-size:1rem;text-align:justify;">Reimagine challenges you to creatively and imaginatively identify up
+        to 24 alternative uses for a given everyday object as you can in just 3 minutes. When you hit the green ‘Start 3
+        Minute Challenge’ button below you will be presented with a given object and the countdown clock will commence
+        automatically. When your time runs out you will be unable to enter any more uses. Simply click the red ‘Submit
+        your Alternative Uses’ button to complete the challenge.</p>
     </div>
-    <button class="btn btn-danger btn-lg" id="startBtn">START</button>
+    <div class="text-center">
+      <button class="btn btn-success btn-lg" id="startBtn" onclick="getRandomImgName();">Start 3 Minute Challenge</button>
+    </div>
   </div>
-</section> -->
+</section>
 
 <section id="two" class="container" style="display:none">
   <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-12 text-center">
       <!-- <h5 style="text-align: left">Object:</h5> -->
-      <img src="/reImagine/getImg" alt="phone" id="objImg">
+      <img id="objImg">
       <div id="timer">Timer:<b><span id="time1"></span></b> </div>
-      <button type="submit" class="btn btn-success btn-lg" id="riSubmit">Submit</button>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-12">
-      <input type='button' class="btn btn-success" value='Add Imagination' id='addButton' />
-      <input type='button' class="btn btn-danger" value='Remove Last Imagination' id='removeButton' />
-      <div class="form-horizontal">
-        <div class="control-group" style="margin-top:0.5rem;">
-          <div class="controls">
-            <input type="text" class="form-control myinputs" id="imagination" />
-          </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-12">
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
         </div>
       </div>
-      <!-- <textarea id="imaginations" name="comment" class="form-control" rows="7"
-          placeholder="Enter Imaginations here"></textarea> -->
+    </div>
+    <div class="col-12">
+      <div class="text-center">
+        <button type="submit" class="btn btn-danger btn-lg" id="riSubmit">Submit your Alternative Uses</button>
+      </div>
     </div>
   </div>
 </section>
@@ -63,48 +95,30 @@
   </div>
 </div>
 
-
-
 <!-- The Modal -->
-<div class="modal" id="instructionModal">
+<div class="modal" id="confirmationModal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Instructions before ReImagine Activity:</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
       <!-- Modal body -->
-      <div class="modal-body">
-        Modal body..
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal" id="startBtn">Start</button>
-        <a class="btn btn-danger" href="/challenges">Go Back</a>
+      <div class="modal-body" id="confirmationModalBody">
+        Your Data has been saved. Navigating you to challenges page.....
       </div>
 
     </div>
   </div>
 </div>
 
-<!-- The Modal -->
-<div class="modal" id="confirmationModal">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-  
-       <!-- Modal body -->
-        <div class="modal-body" id="confirmationModalBody">
-          Your Data has been saved. Navigating you to challenges page.....
-        </div>
-  
-      </div>
-    </div>
-  </div>
-
 <link rel="stylesheet" href="/css/reImagine.css" type="text/css">
 <script src="/js/timerClock.js"></script>
 <script src="/js/reImagine.js"></script>
+
+<script>
+  function getRandomImgName() {
+    var images = ['Fork', 'Brick', 'Ball', 'Clip'];
+    var randomNumber = Math.floor(Math.random() * images.length);
+    var img = document.getElementById("objImg")
+    img.setAttribute("src","/reImagine/getImg/"+images[randomNumber])
+    img.setAttribute("alt",images[randomNumber])
+  }
+</script>

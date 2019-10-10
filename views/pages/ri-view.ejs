@@ -11,9 +11,9 @@
           Delete
         </button>
       </form> -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
         Add new image
-      </button>
+      </button> -->
     </div>
   </div>
 </nav>
@@ -38,6 +38,7 @@
       <th>Team Name</th>
       <th>Object</th>
       <th>Imaginations</th>
+      <th>Total</th>
       <th>Delete</th>
     </thead>
     <% for(var i=0; i < data.length; i++) { %>
@@ -46,6 +47,7 @@
       <td><%= data[i].teamName %></td>
       <td><%= data[i].imgObj %></td>
       <td><%= data[i].imaginations %></td>
+      <td><%= data[i].ilength %></td>
       <td>
         <form method="POST" action="/reImagine/delete/id">
           <input type="hidden" value="<%= data[i]._id %>" name="id">
@@ -107,4 +109,6 @@
     });
 
   })
+
+
 </script>
