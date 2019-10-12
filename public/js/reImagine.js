@@ -89,9 +89,10 @@ function saveData(e) {
             $('#confirmationModal').modal({ backdrop: 'static', keyboard: false })
             $('#confirmationModal').modal('show');
             setTimeout(function () {
-                window.location.href = "http://www.openinnovationservices.com/challenges";
-            }, 5000);
-
+                $('#confirmationModal').modal('hide');
+            }, 3000);
+            $(".myinputs").attr('disabled', true)
+            $("#riSubmit").attr('disabled', true)
         })
 }
 

@@ -32,39 +32,40 @@
     <div class="col-lg-4 col-md-4 col-sm-12 text-center">
       <!-- <h5 style="text-align: left">Object:</h5> -->
       <img id="objImg">
+      <h3 id="objName" style="margin-top: 1rem;"></h3>
       <div id="timer">Timer:<b><span id="time1"></span></b> </div>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-12">
       <div class="row">
         <div class="col-lg-4 col-md-12">
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="1.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="2.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="3.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="4.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="5.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="6.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="7.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="8.Enter your idea" />
         </div>
         <div class="col-lg-4 col-md-12">
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="9.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="10.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="11.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="12.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="13.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="14.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="15.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="16.Enter your idea" />
         </div>
         <div class="col-lg-4 col-md-12">
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
-          <input type="text" class="form-control myinputs" id="imagination" placeholder="Enter your Imagination" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="17.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="18.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="19.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="20.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="21.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="22.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="23.Enter your idea" />
+          <input type="text" class="form-control myinputs" id="imagination" placeholder="24.Enter your idea" />
         </div>
       </div>
     </div>
@@ -106,7 +107,7 @@
 
       <!-- Modal body -->
       <div class="modal-body" id="confirmationModalBody">
-        Your Data has been saved. Navigating you to challenges page.....
+          Your submission had been saved. Click on Return to Challenges to restart...
       </div>
 
     </div>
@@ -122,7 +123,14 @@
     var images = ['Fork', 'Brick', 'Ball', 'Clip'];
     var randomNumber = Math.floor(Math.random() * images.length);
     var img = document.getElementById("objImg")
+    var objname = document.getElementById("objName")
     img.setAttribute("src","/reImagine/getImg/"+images[randomNumber])
     img.setAttribute("alt",images[randomNumber])
+    if(images[randomNumber]== "Ball"){
+      objname.innerHTML = "Table tennis/Ping-pong Ball";
+    }else{
+      objname.innerHTML = images[randomNumber];
+    }
+    
   }
 </script>
