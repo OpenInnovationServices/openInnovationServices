@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Open Innovation Services">
+    <meta name="keywords" content="Startup, entreprenur, Fergal Brophy, open, innovation, services">
+    <link href="image/favicon.ico" rel="shortcut icon" />
+    <title>VideoWall - Open Innovation Services</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="css/common-style.css" rel="stylesheet" type="text/css" />
+    <link href="css/cases.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!--Navbar Section-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"><a href="index.html"><img class="logo-m"
+                src="image/logo.jpg" /></a>
+        <button class="navbar-toggler ml-auto" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse myNavbar" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                <li class="nav-item"><a class="nav-link" href="mentors.html">Coaches</a></li>
+                <li class="nav-item"><a class="nav-link" href="/gallery"><span class="acti">Photos</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/challenges">Challenges</a></li>
+                <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" id="mentors">
+        <div class="row welcome">
+            <div class="col-12 text-center">
+                <h1 class="display-5">Video Wall</h1>
+                &nbsp;
+
+                <h6 class="display-5">Shared experiences.</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 1rem;">
+        <!-- Button trigger modal -->
+        
+        <% for(var i=1; i <= 8; i++) {  %>
+            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" onclick="setSrc('v<%= i %>')">
+                    Video <%= i %></h5>
+                </a>
+            <% } %>
+        <!-- Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                    <div class="modal-body" style="padding: 0;">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" class="embed-responsive-item" id="videoPlayer" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setSrc(srcValue) {
+            v1 = 'https://www.youtube.com/embed/AtrtRMYr3-Y';
+            v2 = 'https://www.youtube.com/embed/SkS_i8-W9gQ';
+            v3 = 'https://www.youtube.com/embed/mjc1RulIvRY';
+            v4 = 'https://www.youtube.com/embed/34A8KtpLYA0';
+            v5 = 'https://www.youtube.com/embed/MJCSNsuKwTo';
+            v6 = 'https://www.youtube.com/embed/PRtuBEuPyNs';
+            v7 = 'https://www.youtube.com/embed/hE3ZT7yHHlY';
+            v8 = 'https://www.youtube.com/embed/IBaOQSz_ZGQ';
+
+            switch (srcValue) {
+                case 'v1':
+                    srcV = v1;
+                    break;
+                case 'v2':
+                    srcV = v2;
+                    break;
+                case 'v3':
+                    srcV = v3;
+                    break;
+                case 'v4':
+                    srcV = v4;
+                    break;
+                case 'v5':
+                    srcV = v5;
+                    break;
+                case 'v6':
+                    srcV = v6;
+                    break;
+                case 'v7':
+                    srcV = v7;
+                    break;
+                case 'v8':
+                    srcV = v8;
+                    break;
+                default:
+                    srcV = v1;
+            }
+
+            $('#videoPlayer').attr('src', srcV);
+        }
+    </script>
+</body>
+
+</html>

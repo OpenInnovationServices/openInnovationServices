@@ -39,6 +39,10 @@ app.get('/dashboard',(req,res)=>{
     res.status(200).render('pages/master-view.ejs');
 })
 
+app.get('/videoWall',(req,res)=>{
+    res.status(200).render('pages/videoWall.ejs');
+})
+
 // Handle 404 - Keep this as a last route
 app.use(function(req, res, next) {
     res.status(404).send('404: File Not Found');
