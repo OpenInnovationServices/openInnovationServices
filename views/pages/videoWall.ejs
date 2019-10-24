@@ -28,7 +28,8 @@
                 <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
                 <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
                 <li class="nav-item"><a class="nav-link" href="mentors.html">Coaches</a></li>
-                <li class="nav-item"><a class="nav-link" href="/gallery"><span class="acti">Photos</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/gallery">Photos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/videoWall"><span class="acti">Explainers</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="/challenges">Challenges</a></li>
                 <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
             </ul>
@@ -48,23 +49,27 @@
 
     <div class="container" style="margin-top: 1rem;">
         <!-- Button trigger modal -->
-        
-        <% for(var i=1; i <= 8; i++) {  %>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" onclick="setSrc('v<%= i %>')">
-                    Video <%= i %></h5>
-                </a>
+
+        <div class="row">
+            <% for(var i=1; i <= 8; i++) {  %>
+            <div class="col-4">
+                    <img src='image/videoWall/ss<%= i %>.png' onclick="setSrc('v<%= i %>')" data-toggle="modal" data-target="#videoModal"/>
+                 </div>
             <% } %>
+        </div>
+
         <!-- Modal -->
         <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog modal-xl" style="min-width: 920px;" role="document">
                 <div class="modal-content">
-                        <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              </div>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
                     <div class="modal-body" style="padding: 0;">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" class="embed-responsive-item" id="videoPlayer" allowfullscreen></iframe>
+                            <iframe width="560" height="315" class="embed-responsive-item" id="videoPlayer"
+                                allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -73,7 +78,14 @@
     </div>
 
     <script>
+
+
+$("#videoModal").on('hidden.bs.modal', function (e) {
+    $("#videoModal iframe").attr("src", $("#videoModal iframe").attr("src"));
+});
+
         function setSrc(srcValue) {
+            $('#videoModal').modal({ backdrop: 'static', keyboard: false })
             v1 = 'https://www.youtube.com/embed/AtrtRMYr3-Y';
             v2 = 'https://www.youtube.com/embed/SkS_i8-W9gQ';
             v3 = 'https://www.youtube.com/embed/mjc1RulIvRY';
