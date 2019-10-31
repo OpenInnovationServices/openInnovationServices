@@ -35,6 +35,7 @@ app.get('/challenges',(req,res)=>{
     res.status(200).render('pages/challenges-index.ejs');
 })
 
+
 app.get('/dashboard',(req,res)=>{
     res.status(200).render('pages/master-view.ejs');
 })
