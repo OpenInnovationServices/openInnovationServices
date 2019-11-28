@@ -1,0 +1,206 @@
+<% include ../partials/ic-header %>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"><a href="index.html"><img class="logo-m"
+      src="/image/challenges/open-logo.jpg" /></a>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item" style="padding-right: 1.3rem;font-family: 'Lato', sans-serif;color: #222;"><a class="nav-link"
+        href="/challenges">Return to challenges</a></li>
+  </ul>
+</nav> -->
+<div class="container">
+  <img src="/image/challenges/innoChallenge-logo.png" class="logo-img">
+  <!-- <hr style="margin-top: 0;"> -->
+  <p style="text-align:left;" class="subheading">Instructions</p>
+  <p class="inst-text">Your challenge is to combine one of your organisation’s business activities with one emerging
+    technology to make something new that could add value to your company today or in the future. Your idea can be as
+    grounded (here and now) or as blue-sky (far-fetched) as you wish. Use the dropdowns to select your mix and match
+    idea and the text box to explain it. Think of a clever working title or brand name for your new solution. </p>
+  <div class="row spacing" style="margin-bottom:2em;">
+    <div class="col-md-5 col-sm-12 text-center">
+      <p class="subtitle">Business Activities</p>
+      <div style="margin: auto;">
+        <div class="item">
+          <img src="/image/challenges/products.png" class="tech-img">
+          <span class="caption">Products</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/services.png" class="tech-img">
+          <span class="caption">Services</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/brands.png" class="tech-img">
+          <span class="caption">Brand</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/operations.png" class="tech-img">
+          <span class="caption">Operations</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/sales.png" class="tech-img">
+          <span class="caption">Sales Processes</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/marketing.png" class="tech-img">
+          <span class="caption">Marketing</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/channels.png" class="tech-img">
+          <span class="caption">Channel</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/customer.png" class="tech-img">
+          <span class="caption">Client Comms</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/partnership.png" class="tech-img">
+          <span class="caption">Partnerships</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/procurement.png" class="tech-img">
+          <span class="caption">Procurement</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/hr.png" class="tech-img">
+          <span class="caption">HR Processes</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/finance.png" class="tech-img">
+          <span class="caption">Finance Processes</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-12 middle" style="text-align: center; font-size: 10rem;font-weight: bold;color: red;">+
+    </div>
+    <div class="col-md-5 col-sm-12" style="text-align: center;">
+      <p class="subtitle">Emerging Technologies</p>
+      <div style="margin: auto;">
+        <div class="item">
+          <img src="/image/challenges/ai.png" class="tech-img">
+          <span class="caption">Artificial Intelligence</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/robotic.png" class="tech-img">
+          <span class="caption">Robotics</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/iot.png" class="tech-img">
+          <span class="caption">Internet Of Things</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/3d-print.png" class="tech-img">
+          <span class="caption">3D-Printing</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/vr-glasses.png" class="tech-img">
+          <span class="caption">VR/AR</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/blockchain.png" class="tech-img">
+          <span class="caption">Blockchain</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/big-data.png" class="tech-img">
+          <span class="caption">Big Data</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/drone.png" class="tech-img">
+          <span class="caption">Drones</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/cybersecurity.jpg" class="tech-img">
+          <span class="caption">Cyber Security</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/cloudComputing.png" class="tech-img">
+          <span class="caption">Cloud Computing</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/nanoTech.png" class="tech-img">
+          <span class="caption">Nano Technology</span>
+        </div>
+        <div class="item">
+          <img src="/image/challenges/bioTech.png" class="tech-img">
+          <span class="caption">Biotechnology</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <%if (length < 100) { %>
+  <!-- <p class="subtitle" style="padding-top: 20px;">COMBINATION & ASSOCIATION IDEA</p> -->
+  <!--Form for idea-->
+  <form class="mainForm" id="ic-form" onsubmit="return confirm('Are you sure you want to submit your innovative idea?');"
+    action="/innovationChallenge/enterpriseIreland" method="POST">
+
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-12 middle">
+        <div class="form-group">
+          <!-- <label for="sel1">SELECT EVERYDAY OBJECT</label> -->
+          <select class="form-control ipborder" id="everyDayObj" name="everyDayObject" style="font-size:1.3rem;" required>
+            <option value="">Mix...</option>
+            <option>Products 📦</option>
+            <option>Services👌</option>
+            <option>Brand ❤️</option>
+            <option>Operations⚙️</option>
+            <option>Sales 🤝</option>
+            <option>Marketing 💶</option>
+            <option>Channel 🌏</option>
+            <option>Client Comms 🗣</option>
+            <option>Partnerships 👫</option>
+            <option>Procurement 🛒</option>
+            <option>HR Processes 🌞</option>
+            <option>Finance Processes 🏦</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12"></div>
+      <!-- <div class="col-lg-1 col-md-12 col-sm-12 middle" style="font-size: 3em; text-align: center;">+</div> -->
+      <div class="col-lg-5 col-md-6 col-sm-12 middle">
+        <div class="form-group">
+          <!-- <label for="sel1">SELECT EMERGING TECHNOLOGY</label> -->
+          <select class="form-control ipborder" id="emergTech" name="techObject" style="font-size:1.3rem;" required>
+            <option value="">and match!</option>
+            <option>Artificial Intelligence 🧠</option>
+            <option>Robotics 🤖</option>
+            <option>Internet Of Things 📡</option>
+            <option>3D Printing 🖨️</option>
+            <option>VR/AR 👓</option>
+            <option>Blockchain ₿</option>
+            <option>Big Data 💽</option>
+            <option>Drone 🛰</option>
+            <option>Cybersecurity 🔒</option>
+            <option>Cloud Computing ☁️</option>
+            <option>Nanotechnology 👁️</option>
+            <option>Biotechnology ⚛</option>
+          </select>
+        </div>
+      </div>
+      <!-- <div class="col-lg-1 col-md-12 col-sm-12 middle" style="font-size: 3em;text-align: center;">=</div> -->
+      <div class="col-lg-12 col-md-12 col-sm-12 middle">
+        <div class="form-group">
+          <label for="comment">Your Innovative Idea (Max 25-30 Words)</label>
+          <textarea class="form-control ipborder" rows="5" name="solution" maxlength="150" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group">
+          <label for="usr">Team/Individual Name (Max 30 Characters)</label>
+          <input type="text" class="form-control ipborder" name="teamName" maxlength="30" required>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <button style="margin:auto;" type="submit" class="btn btn-lg btn-danger">Submit Idea</button>
+    </div>
+  </form>
+  <!-- <h5>You can view the solutions on <a href="innovationChallenge/view">dashboard</a></h5> -->
+  <% }else{ %>
+  <h2>You have reached the limit of app storage... Please delete the data from <a
+      href="innovationChallenge/enterpriseIreland/view">dashboard</a></h2>
+  <% } %>
+  <hr>
+</div>
+
+
+
+<% include ../partials/footer %>

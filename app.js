@@ -4,6 +4,7 @@ var path = require('path');
 const bodyParser = require('body-parser');
 const crazyCombinationRoutes=require('./routes/crazyCombinationRoutes');
 const innovationChallenge=require('./routes/innovationChallengeRoutes');
+const customInnovationChallenge=require('./routes/customInnovationChallengeRoutes');
 const reImagine = require('./routes/reImagineRoutes');
 const gallery = require('./routes/galleryRoutes');
 
@@ -27,7 +28,8 @@ app.get('/',(req,res)=>{
 
 //set up routes
 app.use('/crazyCombinations', crazyCombinationRoutes);
-app.use('/innovationChallenge', innovationChallenge);
+// app.use('/innovationChallenge', innovationChallenge);
+app.use('/innovationChallenge/enterpriseIreland', customInnovationChallenge);
 app.use('/reImagine', reImagine);
 app.use('/gallery', gallery);
 

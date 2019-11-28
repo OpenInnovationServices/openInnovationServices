@@ -1,9 +1,9 @@
 <% include ../partials/header %>
-<nav class="navbar navbar-expand-sm navbar-dark" style="background-color:transparent;">
+<!-- <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:transparent;">
   <div class="container" style="color:purple;font-weight: bold;">
     <h4>Dashboard View</h4>
     <div class="justify-content-end" style="display:flex; font-size: 15px;">
-        <a href="/dashboard">Back to Dashboard</a>
+        <a href="/dashboard">Back to Dashboard</a> -->
       <!-- &nbsp;| &nbsp;
       <form onsubmit="return confirm('Do you really want to submit the form?');" action="/innovationChallenge/delete"
         method="POST">
@@ -11,15 +11,16 @@
           Delete
         </button>
       </form> -->
-    </div>
+    <!-- </div>
   </div>
-</nav>
+</nav> -->
 <!-- <%= length <2 ? "style=display:none;" : '' %> -->
 
-<div class="container">
-  <hr style="margin-top:0;">
+<div class="container" style="padding-top: 2rem;">
+  <h3>Innovative Challenge Dashboard</h3>
+  <hr>
   <%if (length < 1) { %>
-  <h2>No Mix and Match solutions to display ..... <a href="/innovationChallenge">Go back to Challenges</a></h2>
+  <h2>No Mix and Match solutions to display ..... <a href="/innovationChallenge/enterpriseIreland">Go back to Challenges</a></h2>
   <% }else{ %>
   <table class="table table-bordered">
     <thead>
@@ -38,7 +39,7 @@
       <td><%= data[i].techObject %></td>
       <td><%= data[i].solution %></td>
       <td>
-        <form method="POST" action="/innovationChallenge/delete/id">
+        <form method="POST" action="/innovationChallenge/enterpriseIreland/delete/id">
           <input type="hidden" value="<%= data[i]._id %>" name="id">
           <button type="submit"><i class="fas fa-trash"></i></button>
         </form>
