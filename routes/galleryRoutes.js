@@ -11,11 +11,10 @@ router.get('/', (req, res) => {
     MongoClient.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("jl-oauth-test");
-        dbo.collection("gallerySolutions")
-            .find()
-            .sort({position : 1})
-            .collation({locale: "en_US", numericOrdering: true})
-            .toArray(function (err, result) {
+        dbo.collection("gallerySolutions").find({}).toArray(function (err, result) {
+            //.sort({position : 1})
+            //.collation({locale: "en_US", numericOrdering: true})
+            
             if (err) res.status(400).json("Error Connecting DB");
             //console.log(result);
             res.status(200).render('pages/gallery.ejs', { data: result, length: result.length });
@@ -30,11 +29,10 @@ router.get('/dashboard', (req, res) => {
     MongoClient.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("jl-oauth-test");
-        dbo.collection("gallerySolutions")
-            .find()
-            .sort({position : 1})
-            .collation({locale: "en_US", numericOrdering: true})
-            .toArray(function (err, result) {
+        dbo.collection("gallerySolutions").find({}).toArray(function (err, result) {
+            // .sort({position : 1})
+            // .collation({locale: "en_US", numericOrdering: true})
+            
             if (err) res.status(400).json("Error Connecting DB");
             //console.log(result);
             res.status(200).render('pages/galleryDashboard.ejs', { data: result, length: result.length });
