@@ -28,8 +28,8 @@ app.get('/',(req,res)=>{
 
 //set up routes
 app.use('/crazyCombinations', crazyCombinationRoutes);
-// app.use('/innovationChallenge', innovationChallenge);
-app.use('/innovationChallenge/enterpriseIreland', customInnovationChallenge);
+app.use('/innovationChallenge', innovationChallenge);
+// app.use('/innovationChallenge/enterpriseIreland', customInnovationChallenge);
 app.use('/reImagine', reImagine);
 app.use('/gallery', gallery);
 

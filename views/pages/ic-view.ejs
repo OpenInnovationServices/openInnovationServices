@@ -20,7 +20,7 @@
   <h3>Innovative Challenge Dashboard</h3>
   <hr>
   <%if (length < 1) { %>
-  <h2>No Mix and Match solutions to display ..... <a href="/innovationChallenge/enterpriseIreland">Go back to Challenges</a></h2>
+  <h2>No Mix and Match solutions to display ..... <a href="/innovationChallenge">Go back to Challenges</a></h2>
   <% }else{ %>
   <table class="table table-bordered">
     <thead>
@@ -39,7 +39,7 @@
       <td><%= data[i].techObject %></td>
       <td><%= data[i].solution %></td>
       <td>
-        <form method="POST" action="/innovationChallenge/enterpriseIreland/delete/id">
+        <form method="POST" action="/innovationChallenge/delete/id">
           <input type="hidden" value="<%= data[i]._id %>" name="id">
           <button type="submit"><i class="fas fa-trash"></i></button>
         </form>
