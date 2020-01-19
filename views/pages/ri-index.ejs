@@ -120,14 +120,22 @@
 
 <script>
   function getRandomImgName() {
-    var images = ['Fork', 'Brick', 'Ball'];
+    var images = ['eir-poles','used-tyres','unused-office-space','esb-poolbeg-chimneys','broken-pallets'];
     var randomNumber = Math.floor(Math.random() * images.length);
     var img = document.getElementById("objImg")
     var objname = document.getElementById("objName")
     img.setAttribute("src","/reImagine/getImg/"+images[randomNumber])
     img.setAttribute("alt",images[randomNumber])
-    if(images[randomNumber]== "Ball"){
-      objname.innerHTML = "Table tennis Ball";
+    if(images[randomNumber]== "eir-poles"){
+      objname.innerHTML = "eir Telegraph Poles";
+    }else if(images[randomNumber]== "used-tyres"){
+      objname.innerHTML = "Used Tyres";
+    }else if(images[randomNumber]== "unused-office-space"){
+      objname.innerHTML = "Unused Office Space";
+    }else if(images[randomNumber]== "esb-chimneys"){
+      objname.innerHTML = "ESB Poolbeg Chimneys";
+    }else if(images[randomNumber]== "broken-pallets"){
+      objname.innerHTML = "Broken Pallets";
     }else{
       objname.innerHTML = images[randomNumber];
     }
