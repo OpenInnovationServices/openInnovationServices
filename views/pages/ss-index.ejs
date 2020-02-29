@@ -1,0 +1,153 @@
+<% include ../partials/ic-header %>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"><a href="index.html"><img class="logo-m"
+                src="/image/challenges/open-logo.jpg" style="padding-left:4rem;" /></a>
+        <ul class="navbar-nav ml-auto" >
+            <li class="nav-item"
+                style="padding-right: 5rem; font-size: 2rem;font-family: 'Lato', sans-serif;color: #222;">
+                <img src="/image/challenges/sustainableSolution/susSol-logo.jpg" style="max-height: 3rem;"> Sustainable
+                Solution</li>
+        </ul>
+    </nav>
+</div>
+<div class="container position">
+    <!-- <img src="/image/challenges/innoChallenge-logo.png" class="logo-img"> -->
+    <div class="row spacing" style="margin-bottom:2em;">
+        <div class="col-md-5 col-sm-12 text-center">
+            <p class="subtitle">Greenhouse Gases</p>
+            <div style="margin: auto;">
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/car.png" class="tech-img">
+                    <span class="caption">Cars</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/homeEnergy.png" class="tech-img">
+                    <span class="caption">Home Energy</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/dairy.png" class="tech-img">
+                    <span class="caption">Meat, Dairy, Eggs</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/wasteWater.png" class="tech-img">
+                    <span class="caption">Water & Waste</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/plasticDoc.png" class="tech-img">
+                    <span class="caption">Plastic & Paper</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/clothes.png" class="tech-img">
+                    <span class="caption">Clothes</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/travel.png" class="tech-img">
+                    <span class="caption">Travel(Air, Train, Bus)</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/house.png" class="tech-img">
+                    <span class="caption">Buildings & Furniture</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-12 middle" style="text-align: center; font-size: 10rem;font-weight: bold;">+
+        </div>
+        <div class="col-md-5 col-sm-12" style="text-align: center;">
+            <p class="subtitle">Waste Management Tools</p>
+            <div style="margin: auto;">
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/reduce.png" class="tech-img">
+                    <span class="caption">Reduce</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/reuse.png" class="tech-img">
+                    <span class="caption">Reuse</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/repair.png" class="tech-img">
+                    <span class="caption">Repair</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/recycle.png" class="tech-img">
+                    <span class="caption">Recycle</span>
+                </div>
+                <div class="item">
+                    <img src="/image/challenges/sustainableSolution/other.png" class="tech-img">
+                    <span class="caption">Other</span>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <%if (length < 200) { %>
+    <!-- <p class="subtitle" style="padding-top: 20px;">COMBINATION & ASSOCIATION IDEA</p> -->
+    <!--Form for idea-->
+    <form class="mainForm" id="ic-form" onsubmit="return confirm('Do you really want to submit the form?');"
+        action="/sustainableSolution" method="POST">
+
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-12 middle">
+                <div class="form-group">
+                    <!-- <label for="sel1">SELECT EVERYDAY OBJECT</label> -->
+                    <select class="form-control ipborder" id="everyDayObj" name="everyDayObject"
+                        style="font-size:1.3rem;" required>
+                        <option value="">Mix...</option>
+                        <option>Cars</option>
+                        <option>Home Energy</option>
+                        <option>Meat, Dairy, Eggs</option>
+                        <option>Water & Waste</option>
+                        <option>Plastic & Paper</option>
+                        <option>Clothes</option>
+                        <option>Travel(Air, Bus, Train)</option>
+                        <option>Building & Furniture</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12"></div>
+            <!-- <div class="col-lg-1 col-md-12 col-sm-12 middle" style="font-size: 3em; text-align: center;">+</div> -->
+            <div class="col-lg-5 col-md-6 col-sm-12 middle">
+                <div class="form-group">
+                    <!-- <label for="sel1">SELECT EMERGING TECHNOLOGY</label> -->
+                    <select class="form-control ipborder" id="emergTech" name="techObject" style="font-size:1.3rem;"
+                        required>
+                        <option value="">and match!</option>
+                        <option>Reduce</option>
+                        <option>Reuse</option>
+                        <option>Repair</option>
+                        <option>Recycle</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <!-- <div class="col-lg-1 col-md-12 col-sm-12 middle" style="font-size: 3em;text-align: center;">=</div> -->
+            <div class="col-lg-12 col-md-12 col-sm-12 middle">
+                <div class="form-group">
+                    <label for="comment">Your Sustainable Idea (Max 25-30 Words)</label>
+                    <textarea class="form-control ipborder" rows="5" name="solution" maxlength="150"
+                        required></textarea>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <div class="form-group">
+                    <label for="usr">Team/Individual Name (Max 30 Characters)</label>
+                    <input type="text" class="form-control ipborder" name="teamName" maxlength="30" required>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;">
+            <button style="margin:auto;" type="submit" class="btn btn-lg btn-danger">Submit Idea</button>
+        </div>
+    </form>
+    <!-- <h5>You can view the solutions on <a href="innovationChallenge/view">dashboard</a></h5> -->
+    <% }else{ %>
+    <h2>You have reached the limit of app storage... Please delete the data from <a
+            href="sustainableSolution/view">dashboard</a></h2>
+    <% } %>
+    <hr>
+</div>
+
+
+
+<!-- <% include ../partials/footer %> -->
