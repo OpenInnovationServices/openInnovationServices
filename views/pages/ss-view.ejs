@@ -34,6 +34,8 @@
       <th>Every Day Object</th>
       <th>Emerging Technology</th>
       <th>Solution Provided</th>
+      <th>First Name</th>
+      <th>School</th>
       <th>Delete</th>
     </thead>
     <% for(var i=0; i < data.length; i++) { %>
@@ -43,6 +45,8 @@
       <td><%= data[i].everyDayObject %></td>
       <td><%= data[i].techObject %></td>
       <td><%= data[i].solution %></td>
+      <td><%= data[i].player %></td>
+      <td><%= data[i].school %></td>
       <td>
         <form method="POST" action="/sustainableSolution/delete/id">
           <input type="hidden" value="<%= data[i]._id %>" name="id">

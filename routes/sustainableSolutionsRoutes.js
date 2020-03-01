@@ -35,7 +35,9 @@ router.get('/view',(req,res)=>{
 
 router.post('/',(req,res)=>{
     const idea = new sustainableSolution({
-        name:req.body.teamName,
+        name:req.body.brandName,
+        player:req.body.teamName,
+        school:req.body.school,
         everyDayObject:req.body.everyDayObject,
         techObject:req.body.techObject,
         solution: req.body.solution
