@@ -50,11 +50,16 @@ a.nav-link:hover{
 
 .mainForm{
   padding-bottom: 20px;
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 .tech-img{
   max-height: 4rem;
+  margin: 0.6rem;
+}
+
+.tech-img1{
+  max-height: 2.5rem;
   margin: 0.6rem;
 }
 
